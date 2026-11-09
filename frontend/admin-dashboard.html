@@ -1,1 +1,110 @@
-<!doctype html><html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Haimiya Admin Dashboard</title><link rel="stylesheet" href="css/main.css"></head><body style="display:none"><main style="max-width:800px;margin:7vh auto;padding:20px"><h1>Admin dashboard</h1><div class="panel"><p>Login berhasil. Editor jadwal dan pengelolaan data akan tersedia setelah endpoint admin dipasang.</p><button class="primary" id="logout">Logout</button> <a href="index.html">Kembali ke website</a></div></main><script src="js/admin-dashboard.js?v=20261110-1"></script></body></html>
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f7f2eb">
+<title>Haimiya · Admin</title>
+<link rel="stylesheet" href="css/main.css">
+<style>
+.admin-shell{min-height:100vh;max-width:1500px;margin:auto;padding:26px;display:grid;grid-template-columns:230px minmax(0,1fr);gap:30px}
+.admin-side{position:sticky;top:26px;height:calc(100vh - 52px);display:flex;flex-direction:column}
+.admin-brand{display:flex;align-items:center;gap:11px;color:var(--ink);text-decoration:none;font:900 19px 'Zen Maru Gothic',sans-serif}
+.admin-brand-mark{width:43px;height:43px;border-radius:15px;background:#503725;color:#fff;display:grid;place-items:center;font-size:22px}
+.admin-brand small{display:block;color:var(--muted);font:10px 'DM Mono',monospace;letter-spacing:1.5px;margin-top:2px}
+.admin-nav{display:grid;gap:7px;margin-top:48px}
+.admin-nav button{border:0;background:transparent;text-align:left;padding:13px 14px;border-radius:13px;color:#62564e;font:700 13px 'Nunito Sans',sans-serif;cursor:pointer}
+.admin-nav button.active{background:#e8d8c8;color:#4b3020}
+.admin-nav button span{display:inline-block;width:25px;color:#9b785d}
+.admin-side-foot{margin-top:auto;padding:15px 4px;color:var(--muted);font:10px 'DM Mono',monospace;line-height:1.8}
+.admin-main{min-width:0;padding:4px 0 50px}
+.admin-top{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:27px}
+.admin-top h1{font:900 27px 'Zen Maru Gothic',sans-serif;margin:5px 0}
+.admin-top p{margin:0;color:var(--muted);font-size:12px}
+.admin-actions{display:flex;gap:9px;align-items:center}
+.admin-actions a,.admin-actions button{border:1px solid var(--line);background:#fff;color:var(--brown);padding:10px 13px;border-radius:11px;text-decoration:none;font-weight:800;font-size:12px;cursor:pointer}
+.admin-actions button{background:#65452f;color:white;border-color:#65452f}
+.admin-hero{position:relative;overflow:hidden;background:linear-gradient(115deg,#503725,#79583f);color:white;border-radius:23px;padding:28px 30px;display:flex;justify-content:space-between;align-items:center;gap:20px;min-height:165px}
+.admin-hero:after{content:"H";position:absolute;right:28px;top:-55px;font:900 220px 'Zen Maru Gothic',sans-serif;color:#ffffff0b;pointer-events:none}
+.admin-hero .eyebrow{color:#e3c8b1}
+.admin-hero h2{font:900 25px 'Zen Maru Gothic',sans-serif;margin:9px 0 6px}
+.admin-hero p{color:#eadbcf;font-size:13px;margin:0;max-width:470px;line-height:1.7}
+.admin-hero-tag{position:relative;z-index:1;border:1px solid #ffffff38;border-radius:50px;padding:10px 14px;color:#f4e7dc;font:10px 'DM Mono',monospace;white-space:nowrap}
+.admin-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px;margin-top:17px}
+.admin-stat{background:#fff;border:1px solid var(--line);border-radius:17px;padding:17px 18px;box-shadow:var(--shadow)}
+.admin-stat span{display:block;color:var(--muted);font-size:11px;font-weight:700}
+.admin-stat strong{display:block;font:800 27px 'DM Mono',monospace;color:#503725;margin-top:7px}
+.admin-stat small{display:block;color:#8a7a6d;font-size:10px;margin-top:4px}
+.admin-grid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(230px,.8fr);gap:15px;margin-top:23px}
+.admin-card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:19px;box-shadow:var(--shadow);min-width:0}
+.admin-card-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:15px}
+.admin-card-head h3{font:900 16px 'Zen Maru Gothic',sans-serif;margin:0}
+.admin-card-head small{font:10px 'DM Mono',monospace;color:var(--muted)}
+.admin-today-list{display:grid;gap:8px}
+.admin-lesson{display:grid;grid-template-columns:88px minmax(0,1fr) auto;align-items:center;gap:12px;padding:11px 12px;background:#faf7f3;border:1px solid #eee5dc;border-radius:12px}
+.admin-lesson time{font:10px 'DM Mono',monospace;color:#76543d}
+.admin-lesson strong{display:block;font-size:12px}
+.admin-lesson small{display:block;color:var(--muted);font-size:10px;margin-top:3px}
+.admin-lesson em{font:9px 'DM Mono',monospace;color:#76543d;background:#eee4da;padding:6px 8px;border-radius:20px;font-style:normal}
+.admin-empty{color:var(--muted);font-size:12px;padding:18px;text-align:center}
+.admin-shortcuts{display:grid;gap:9px}
+.admin-shortcut{display:flex;align-items:center;gap:11px;padding:12px;border:1px solid var(--line);border-radius:12px;color:var(--ink);text-decoration:none}
+.admin-shortcut b{width:34px;height:34px;display:grid;place-items:center;background:#f4ebe2;border-radius:11px;color:#76543d;font-size:15px}
+.admin-shortcut strong{display:block;font-size:12px}
+.admin-shortcut small{display:block;color:var(--muted);font-size:10px;margin-top:2px}
+.admin-security{margin-top:14px;background:#f4eee7;border:1px solid #e8ddd1;border-radius:14px;padding:14px}
+.admin-security strong{font-size:12px}
+.admin-security p{font-size:11px;color:#65564b;line-height:1.6;margin:6px 0 0}
+.admin-view{display:none}.admin-view.active{display:block}
+.admin-daybar{display:flex;gap:7px;overflow:auto;padding:3px 0 12px}
+.admin-daybar button{flex:none;border:1px solid var(--line);background:#fff;border-radius:30px;padding:8px 13px;color:var(--muted);font-weight:800;font-size:11px;cursor:pointer}
+.admin-daybar button.active{background:#65452f;color:#fff;border-color:#65452f}
+.admin-schedule{display:grid;gap:8px}
+.admin-footnote{font-size:11px;color:var(--muted);line-height:1.7;margin:13px 0 0}
+@media(max-width:900px){.admin-shell{grid-template-columns:190px minmax(0,1fr);gap:20px;padding:20px}.admin-grid{grid-template-columns:1fr}.admin-side{top:20px;height:calc(100vh - 40px)}}
+@media(max-width:650px){.admin-shell{display:block;padding:16px}.admin-side{position:static;height:auto}.admin-nav{display:flex;overflow:auto;margin:17px 0 22px}.admin-nav button{white-space:nowrap;padding:10px 12px}.admin-side-foot{display:none}.admin-top{align-items:flex-start}.admin-top h1{font-size:22px}.admin-actions{flex-direction:column;align-items:stretch}.admin-actions a,.admin-actions button{text-align:center;white-space:nowrap}.admin-hero{padding:22px;min-height:145px}.admin-hero h2{font-size:21px}.admin-hero-tag{display:none}.admin-stats{gap:8px}.admin-stat{padding:13px}.admin-stat strong{font-size:22px}.admin-stat span{font-size:10px}.admin-lesson{grid-template-columns:75px minmax(0,1fr);gap:8px}.admin-lesson em{grid-column:2;justify-self:start}}
+</style>
+</head>
+<body style="display:none">
+<div class="admin-shell">
+<aside class="admin-side">
+<a class="admin-brand" href="index.html"><span class="admin-brand-mark">H.</span><span>Haimiya<small>ADMIN CONSOLE</small></span></a>
+<nav class="admin-nav" aria-label="Navigasi admin">
+<button class="active" data-view="overview"><span>⌂</span>Ringkasan</button>
+<button data-view="schedule"><span>▦</span>Jadwal kelas</button>
+</nav>
+<div class="admin-side-foot">KELAS IX-A<br>HAIMIYA SCHOOL<br><span style="color:#66866b">●</span> SESSION VERIFIED</div>
+</aside>
+<main class="admin-main">
+<header class="admin-top">
+<div><div class="eyebrow">HAIMIYA / ADMIN</div><h1 id="page-title">Ringkasan</h1><p id="today-label">Panel pengelolaan kelas IX-A</p></div>
+<div class="admin-actions"><a href="index.html">↗ Lihat website</a><button id="logout">Keluar</button></div>
+</header>
+<section class="admin-view active" id="view-overview">
+<div class="admin-hero"><div><div class="eyebrow">WELCOME BACK, ADMIN</div><h2>Ruang kendali Haimiya.</h2><p>Semua hal penting untuk website kelas IX-A, dirangkum dalam satu tempat. Keep it neat, keep it simple.</p></div><div class="admin-hero-tag">✦ IX — A / 2026</div></div>
+<div class="admin-stats">
+<div class="admin-stat"><span>Hari terjadwal</span><strong id="stat-days">—</strong><small>Senin sampai Sabtu</small></div>
+<div class="admin-stat"><span>Agenda kelas</span><strong id="stat-items">—</strong><small>Termasuk istirahat dan apel</small></div>
+<div class="admin-stat"><span>Mata pelajaran</span><strong id="stat-subjects">—</strong><small>Mapel unik dari jadwal</small></div>
+</div>
+<div class="admin-grid">
+<section class="admin-card"><div class="admin-card-head"><h3 id="today-title">Jadwal hari ini</h3><small id="today-count">—</small></div><div class="admin-today-list" id="today-list"></div></section>
+<aside>
+<section class="admin-card"><div class="admin-card-head"><h3>Akses cepat</h3><small>SHORTCUTS</small></div><div class="admin-shortcuts">
+<a class="admin-shortcut" href="index.html"><b>↗</b><span><strong>Website kelas</strong><small>Lihat tampilan publik</small></span></a>
+<a class="admin-shortcut" href="index.html#jadwal"><b>▦</b><span><strong>Jadwal IX-A</strong><small>Buka halaman jadwal</small></span></a>
+<a class="admin-shortcut" href="index.html#nilai"><b>✎</b><span><strong>Halaman nilai</strong><small>Lihat area penilaian</small></span></a>
+</div></section>
+<div class="admin-security"><strong>◈ Sesi admin aktif</strong><p>Halaman ini memverifikasi sesi ke backend. Gunakan tombol Keluar jika selesai memakai perangkat bersama.</p></div>
+</aside>
+</div>
+</section>
+<section class="admin-view" id="view-schedule">
+<div class="admin-card"><div class="admin-card-head"><h3>Jadwal pelajaran IX-A</h3><small id="schedule-total">—</small></div><div class="admin-daybar" id="day-tabs"></div><div class="admin-schedule" id="schedule-list"></div><p class="admin-footnote">Data ini ditampilkan dari jadwal website saat ini. Perubahan jadwal belum dapat disimpan melalui dashboard karena endpoint penyimpanan jadwal belum tersedia.</p></div>
+</section>
+</main>
+</div>
+<script src="js/schedule-data.js"></script>
+<script src="js/admin-dashboard.js?v=20261110-2"></script>
+</body>
+</html>
