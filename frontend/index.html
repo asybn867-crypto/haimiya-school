@@ -2,16 +2,16 @@
 <html lang="id">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#f6f0e7"><title>Haimiya — School Dashboard</title>
+<meta name="theme-color" content="#f7f2eb"><title>Fiancee · School Companion</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Nunito+Sans:wght@400;500;600;700;800&family=Zen+Maru+Gothic:wght@500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Nunito+Sans:wght@400;500;600;700;800;900&family=Zen+Maru+Gothic:wght@500;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
 <video class="page-bg" autoplay muted loop playsinline preload="auto"><source src="bg-video.mp4" type="video/mp4"></video>
 <div class="shell">
 <aside class="sidebar">
-  <a class="brand" href="#"><span class="brand-mark">h.</span><span>haimiya<small>school companion</small></span></a>
+  <a class="brand" href="#"><span class="brand-mark">f.</span><span>Fiancee😩<small>school companion</small></span></a>
   <nav id="nav">
     <button class="nav-link active" data-view="schedule">◷ <span>Jadwal sekolah</span></button>
     <button class="nav-link" data-view="grades">▤ <span>Nilai</span></button>
@@ -21,17 +21,60 @@
   <div class="sidebar-bottom"><span class="live-dot"></span> IX-A · 2026/2027</div>
 </aside>
 <main>
-<header class="topbar"><div><div class="eyebrow">MONDAY — SATURDAY</div><h1 id="greeting">Kelas IX-A <span>·</span> Pelajaran</h1></div><div class="clock"><strong id="clock">--:--:--</strong><small id="date">Memuat tanggal…</small></div></header>
+<header class="topbar"><div><div class="eyebrow">MONDAY — SATURDAY</div><h1 id="greeting">Pelajaran</h1></div><div class="clock"><strong id="clock">--:--:--</strong><small id="date">Memuat tanggal…</small></div></header>
 <section class="view active" id="view-schedule">
-  <div class="hero"><div><div class="eyebrow light">YOUR SCHOOL DAY</div><h2 id="today-title">Jadwal hari ini</h2><p id="today-subtitle">Waktu berjalan, pelajaran mengikuti.</p></div><div class="hero-stamp">MIO<br><b>♡</b></div></div>
+  <div class="hero"><div><div class="eyebrow light">YOUR SCHOOL DAY</div><h2 id="today-title">Jadwal hari ini</h2><p id="today-subtitle">Waktu berjalan, pelajaran mengikuti.</p></div><div class="hero-stamp">♡<br><b>✦</b></div></div>
   <div class="section-head"><div><div class="eyebrow">TIMETABLE</div><h2>Jadwal pelajaran</h2></div><span class="timezone">WITA · UTC+8</span></div>
   <div class="day-tabs" id="day-tabs"></div><div class="schedule-list" id="schedule-list"></div>
 </section>
-<section class="view" id="view-grades"><div class="section-head"><div><div class="eyebrow">ACADEMIC RECORD</div><h2>Nilai IX-A</h2></div></div><div class="panel"><div class="form-row"><input id="grade-subject" placeholder="Mata pelajaran"><input id="grade-type" placeholder="Jenis: tugas / PPT / ulangan"></div><div class="form-row"><input id="grade-score" type="number" min="0" max="100" placeholder="Nilai 0–100"><input id="grade-note" placeholder="Catatan (opsional)"></div><button class="primary" id="add-grade">Simpan nilai</button></div><div id="grades-list" class="data-list"></div></section>
-<section class="view" id="view-savings"><div class="section-head"><div><div class="eyebrow">PERSONAL FINANCE</div><h2>Tabungan</h2></div></div><div class="balance"><span>Total saldo</span><strong id="balance">Rp0</strong></div><div class="panel"><div class="form-row"><select id="saving-kind"><option value="in">Menabung</option><option value="out">Mengambil</option></select><input id="saving-amount" type="number" min="1" placeholder="Nominal rupiah"></div><input id="saving-note" placeholder="Keterangan"><button class="primary" id="add-saving">Catat transaksi</button></div><div id="savings-list" class="data-list"></div></section>
-<section class="view" id="view-study"><div class="section-head"><div><div class="eyebrow">NIGHT ROUTINE</div><h2>Belajar malam</h2></div><span class="timezone">Target 2,4 jam</span></div><div class="study-card"><div class="streak"><span>🔥</span><div><strong id="streak-count">0</strong><small>hari streak</small></div></div><div class="progress-track"><i id="study-progress"></i></div><div class="study-meta"><span id="study-time">0 / 144 menit</span><span id="study-percent">0%</span></div><div class="study-actions"><button class="primary" id="study-add">+ 25 menit belajar</button><button class="secondary" id="study-reset">Reset hari ini</button></div></div><div class="section-head"><div><div class="eyebrow">DAILY CHECKLIST</div><h2>Kegiatan belajarmu</h2></div></div><div class="panel checklist-panel"><form id="task-form" class="task-form"><input id="task-input" maxlength="90" placeholder="Tambah kegiatan belajar..." required><button class="primary" type="submit">Tambah</button></form><div class="checklist" id="checklist"></div><p class="task-hint">Kamu bisa menambah, mengubah, menghapus, dan mencentang kegiatan sendiri.</p></div></section>
+<section class="view" id="view-grades"><div class="section-head"><div><div class="eyebrow">ACADEMIC RECORD</div><h2>Nilai</h2></div></div><div class="panel"><div class="form-row"><input id="grade-subject" placeholder="Mata pelajaran"><select id="grade-type"><option value="">Jenis penilaian</option><option>Tugas</option><option>PPT</option><option>Ulangan</option></select></div><div class="form-row"><input id="grade-score" type="number" min="0" max="100" placeholder="Nilai 0–100"><input id="grade-note" placeholder="Catatan (opsional)"></div><button class="primary" id="add-grade">Simpan nilai</button></div><div id="grades-list" class="data-list"></div></section>
+<section class="view" id="view-savings">
+  <div class="section-head"><div><div class="eyebrow">PERSONAL FINANCE</div><h2>Tabungan</h2></div></div>
+  <div class="balance balance-redesign"><div><span>Total saldo tersimpan</span><strong id="balance">Rp0</strong><small id="saving-summary">Belum ada transaksi</small></div><div class="balance-icon">◈</div></div>
+  <div class="saving-stats"><div><small>Total menabung</small><strong id="saving-in">Rp0</strong></div><div><small>Total pengambilan</small><strong id="saving-out">Rp0</strong></div></div>
+  <div class="panel"><div class="form-row"><select id="saving-kind"><option value="in">＋ Menabung</option><option value="out">− Mengambil</option></select><input id="saving-amount" type="number" min="1" placeholder="Nominal rupiah"></div><input id="saving-note" placeholder="Keterangan transaksi"><button class="primary" id="add-saving">Catat transaksi</button></div>
+  <div class="section-head"><div><div class="eyebrow">TRANSACTION HISTORY</div><h2>Riwayat transaksi</h2></div></div><div id="savings-list" class="data-list"></div>
+</section>
+<section class="view" id="view-study">
+  <div class="study-heading"><div><div class="eyebrow">YOUR STUDY SPACE</div><h2>Belajar malam</h2><p>Atur waktu, pantau kebiasaan, dan jangan sampai deadline kelewat.</p></div><span class="study-date-chip" id="study-date-chip">TODAY</span></div>
+  <div class="study-overview">
+    <div class="study-main-stat"><span class="study-stat-icon">🔥</span><div><strong id="streak-count">0</strong><b>hari streak</b><small>Hari beruntun kamu mencatat sesi belajar minimal 25 menit.</small></div></div>
+    <div class="study-progress-box"><div class="study-progress-head"><span>Target belajar harian</span><strong id="study-percent">0%</strong></div><div class="progress-track"><i id="study-progress"></i></div><div class="study-meta"><span id="study-time">0 / 144 menit</span><span>Target 2 jam 24 menit</span></div><div class="study-actions"><button class="primary" id="study-add">＋ Catat 25 menit</button><button class="secondary" id="study-reset">Reset hari ini</button></div></div>
+  </div>
+  <div class="study-section-head"><div><div class="eyebrow">STUDY CALENDAR</div><h3>Kalender belajar</h3><p>Tanggal hari ini mengikuti WITA. Titik oranye = ada sesi belajar, merah = libur nasional.</p></div></div>
+  <div class="calendar-panel">
+    <div class="calendar-toolbar"><button id="cal-prev" aria-label="Bulan sebelumnya">‹</button><div><strong id="cal-month">—</strong><small id="cal-year">—</small></div><button id="cal-next" aria-label="Bulan berikutnya">›</button><button class="calendar-today" id="cal-today">Hari ini</button></div>
+    <div class="calendar-weekdays"><span>Min</span><span>Sen</span><span>Sel</span><span>Rab</span><span>Kam</span><span>Jum</span><span>Sab</span></div>
+    <div class="calendar-grid" id="calendar-grid"></div>
+    <div class="calendar-legend"><span><i class="legend-today"></i>Hari ini</span><span><i class="legend-study"></i>Belajar</span><span><i class="legend-holiday"></i>Libur nasional</span><span><i class="legend-leave"></i>Cuti bersama</span></div>
+    <div class="calendar-detail" id="calendar-detail">Pilih tanggal untuk melihat detail.</div>
+  </div>
+  <div class="study-section-head task-section-head"><div><div class="eyebrow">TASK PLANNER</div><h3>Kegiatan & deadline</h3><p>Tambahkan kegiatan, pilih tanggal dan jam tenggatnya.</p></div><span class="task-count" id="task-count">0 kegiatan</span></div>
+  <div class="task-composer">
+    <form id="task-form">
+      <label class="task-field task-title-field"><span>Nama kegiatan</span><input id="task-input" maxlength="90" placeholder="Contoh: Kerjakan latihan Matematika" required></label>
+      <label class="task-field"><span>Mata pelajaran</span><input id="task-subject" maxlength="50" placeholder="Opsional"></label>
+      <label class="task-field"><span>Deadline</span><input id="task-deadline" type="datetime-local"></label>
+      <button class="primary" type="submit">＋ Tambah kegiatan</button>
+    </form>
+  </div>
+  <div class="task-filters" id="task-filters"><button class="active" data-filter="active">Aktif</button><button data-filter="done">Selesai</button><button data-filter="expired">Terlewat</button><button data-filter="all">Semua</button></div>
+  <div class="checklist" id="checklist"></div>
+</section>
 </main>
-<aside class="right-rail"><div class="rail-card"><div class="eyebrow">HAIMIYA AI</div><div class="ai-avatar">♡</div><h3>Senpaii~~~</h3><p>Haii syngg, kamu lagi ngapainn? Mau nanya apaa?</p><div id="chat-log" class="chat-log"></div><form id="chat-form"><input id="chat-input" placeholder="Tanya sesuatu…"><button aria-label="Kirim">↑</button></form></div><div class="rail-note"><span>✦</span><p>Pelan-pelan saja. Konsisten lebih penting daripada sempurna.</p></div><a class="admin-link" href="admin.html">Admin panel ↗</a></aside>
+<aside class="right-rail">
+  <div class="ai-card">
+    <div class="ai-topline"><span class="ai-live"><i></i> ONLINE</span><span class="ai-spark">✦</span></div>
+    <div class="ai-profile"><div class="ai-avatar"><span>♡</span><i>✦</i></div><div><div class="eyebrow">YOUR STUDY PARTNER</div><h3>Senpaii~~~</h3><small>Haimiya assistant</small></div></div>
+    <div class="ai-welcome"><strong>Haii syngg, kamu lagi ngapainn?</strong><p>Mau bahas pelajaran, tugas, atau sekadar tanya sesuatu? Aku siap bantu.</p></div>
+    <div class="ai-suggestions"><button type="button" data-prompt="Bantu aku memahami materi pelajaran hari ini.">Jelaskan materi</button><button type="button" data-prompt="Bantu aku membuat rencana belajar malam ini.">Rencana belajar</button></div>
+    <div id="chat-log" class="chat-log"><div class="bubble bot">Pilih topik atau tulis pertanyaanmu di bawah yaa ✨</div></div>
+    <form id="chat-form"><input id="chat-input" maxlength="2000" placeholder="Tulis pesan..." autocomplete="off"><button aria-label="Kirim pesan">↑</button></form>
+    <small class="ai-disclaimer">Periksa kembali informasi penting dari AI.</small>
+  </div>
+  <div class="rail-note"><span>✦</span><p>Pelan-pelan saja. Konsisten lebih penting daripada sempurna.</p></div>
+  <a class="admin-link" href="admin.html">Admin panel ↗</a>
+</aside>
 </div>
-<script src="js/schedule-data.js"></script><script src="js/app.js"></script>
+<script src="js/schedule-data.js"></script><script src="js/app.js?v=20261110-study-redesign"></script>
 </body></html>
