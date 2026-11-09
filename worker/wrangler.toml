@@ -4,3 +4,7 @@ compatibility_date = "2026-10-01"
 
 [ai]
 binding = "AI"
+
+[[kv_namespaces]]
+binding = "STORE"
+id = "1668f729786844d29e8f8362b69e4163"
