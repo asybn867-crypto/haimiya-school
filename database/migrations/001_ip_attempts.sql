@@ -1,0 +1,1 @@
+CREATE TABLE IF NOT EXISTS ip_attempts (ip TEXT PRIMARY KEY, attempts INTEGER NOT NULL DEFAULT 0, window_started_at INTEGER NOT NULL);
