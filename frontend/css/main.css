@@ -3,3 +3,36 @@
 @media(max-width:700px){.task-form{flex-direction:row}.task-form .primary{white-space:nowrap}.task-row{align-items:flex-start}.task-tools button{padding:7px 8px}}
 
 html,body{min-height:100%;background:transparent}body{position:relative}.page-bg{position:fixed;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;pointer-events:none}body::before{content:"";position:fixed;inset:0;z-index:1;background:linear-gradient(90deg,#f6f0e7a8,#f6f0e7a0);pointer-events:none}.shell{position:relative;z-index:2}.rail-card,.rail-note,.panel,.study-card,.lesson,.balance{backdrop-filter:blur(8px)}
+
+
+/* Readability pass: stronger contrast and solid content surfaces */
+:root{--paper:#f7f2eb;--surface:#fff;--ink:#2d241f;--muted:#62564e;--line:#ded2c5;--brown:#65452f;--brown2:#76543d;--orange:#c96d28;--orange-soft:#fff0e2;--shadow:0 10px 28px #38271912}
+body{color:var(--ink);background:var(--paper)}
+body::before{background:rgba(247,242,235,.94)}
+.sidebar,.topbar,main,.right-rail{color:var(--ink)}
+.brand,.brand small,.sidebar-bottom,.timezone,.clock small,.lesson-time,.lesson-teacher,.rail-card p,.rail-note p,.task-hint,.admin-link{color:var(--muted)}
+.eyebrow{color:#76513a}
+.nav-link{color:#5e5148}
+.nav-link.active{background:#e8d8c8;color:#4b3020}
+.hero{background:#503725;color:#fff}
+.hero p,.eyebrow.light{color:#f1dfcf}
+.rail-card,.panel,.lesson,.data-item,.study-card,.balance{background:#fff;border-color:#ded2c5;backdrop-filter:none}
+.rail-note{background:#eee3d7;color:#49372b}
+.rail-note p{color:#514237}
+.lesson-name,.section-head h2,.rail-card h3{color:#30251f}
+.lesson-tag{background:#eee4da;color:#553a28}
+.lesson.active{background:#fff0df;border-color:#d98a4b}
+.lesson.break{background:#f0ebe5}
+.panel input,.panel select,.task-form input{background:#fff;color:#2d241f;border-color:#cbbbab}
+.panel input::placeholder,.task-form input::placeholder,#chat-input::placeholder{color:#75685e;opacity:1}
+#chat-form{background:#fff;border-color:#cbbbab}
+#chat-input{color:#2d241f}
+.bubble{background:#eee7df;color:#34271f}
+.bubble.user{background:#ffead7;color:#4a2d1a}
+.primary{background:#65452f;color:#fff}
+.secondary{background:#e9ded3;color:#493426}
+.task-tools button{background:#e9ded3;color:#493426}
+.task-tools button:last-child{background:#f5e3df;color:#873d32}
+.admin-link{color:#594332;text-decoration:underline;text-underline-offset:3px}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #c96d28;outline-offset:3px}
+@media(max-width:700px){body::before{background:rgba(247,242,235,.96)}.nav-link{color:#51443b}.nav-link.active{color:#432b1d}}
