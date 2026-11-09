@@ -7,4 +7,4 @@ if(url.pathname==='/api/admin/request-otp'&&req.method==='POST')return json(awai
 if(url.pathname==='/api/admin/verify-otp'&&req.method==='POST')return json(await verifyOtp(req,env));
 if(url.pathname==='/api/ai'&&req.method==='POST')return json(await askAI(req,env));
 return json({error:'Not found'},404);
-}catch(e){return json({error:'Internal server error'},500)}}};
+}catch(e){console.error('Worker request failed:',e?.message||e);return json({error:'Internal server error'},500)}}};
