@@ -2,6 +2,9 @@ name = "haimiya-api-backend"
 main = "src/index.js"
 compatibility_date = "2026-10-01"
 
+[vars]
+APP_ORIGIN = "https://haimiya-school.asybn867.workers.dev"
+
 [ai]
 binding = "AI"
 
