@@ -11,7 +11,7 @@
 ## Keamanan yang diterapkan di kode
 - Login admin memakai Worker Secrets `ADMIN_USERNAME` dan `ADMIN_PASSWORD`; jangan pernah menaruh kredensial di frontend atau Git.
 - Setelah 3 kegagalan login dalam jendela 15 menit, IP dan pasangan IP/username diblokir sementara. Durasi meningkat 15 menit, 1 jam, lalu 24 jam.
-- Sesi admin memakai token acak yang hanya disimpan dalam bentuk hash di KV dan dikirim ke browser melalui cookie HttpOnly, Secure, SameSite=None, Path=/api/admin, dengan masa berlaku 8 jam.
+- Sesi admin memakai token acak yang hanya disimpan dalam bentuk hash di KV dan dikirim ke browser melalui cookie HttpOnly, Secure, SameSite=None, Partitioned, Path=/api/admin, dengan masa berlaku 8 jam.
 - Endpoint admin memeriksa Origin dan sesi di backend. CORS hanya mengizinkan APP_ORIGIN.
 - Endpoint AI membatasi panjang pesan dan menerapkan penghitung permintaan 30 pesan per IP per menit.
 - Cloudflare Pages memakai security headers dan Content Security Policy dari `frontend/_headers`.
