@@ -2,7 +2,7 @@ const TTL=28800,WINDOW=900,MAX_FAILS=3,DEFAULT_ORIGIN='https://haimiya-school.as
 const enc=new TextEncoder();
 async function hash(s){const b=await crypto.subtle.digest('SHA-256',enc.encode(s));return [...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join('')}
 function equal(a,b){if(typeof a!=='string'||typeof b!=='string')return false;let d=a.length^b.length;for(let i=0;i<Math.max(a.length,b.length);i++)d|=(a.charCodeAt(i)||0)^(b.charCodeAt(i)||0);return d===0}
-function cookie(t,age=TTL){return 'haimiya_admin_session='+t+'; Path=/api/admin; HttpOnly; Secure; SameSite=None; Max-Age='+age}
+function cookie(t,age=TTL){return 'haimiya_admin_session='+t+'; Path=/api/admin; HttpOnly; Secure; SameSite=None; Partitioned; Max-Age='+age}
 function readCookie(req){for(const part of (req.headers.get('Cookie')||'').split(';')){const i=part.indexOf('=');if(i>0&&part.slice(0,i).trim()==='haimiya_admin_session')return part.slice(i+1).trim()}return ''}
 function validOrigin(req,env){return (req.headers.get('Origin')||'')===(env.APP_ORIGIN||DEFAULT_ORIGIN)}
 async function k(prefix,value){return prefix+':'+await hash(value)}
