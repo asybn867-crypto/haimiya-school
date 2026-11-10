@@ -1,28 +1,49 @@
 # Haimiya School Dashboard
 
-Starter project untuk dashboard IX-A.
-
 ## Isi
-- Frontend HTML/CSS/JS dengan jam WITA dan highlight pelajaran aktif.
-- Jadwal IX-A diambil dari file Excel 2026/2027.
-- UI nilai, tabungan, belajar malam, checklist dan streak memakai localStorage pada starter ini.
-- Cloudflare Worker: endpoint AI OpenAI dan alur OTP Gmail API.
-- Skema Cloudflare D1.
+- Frontend HTML/CSS/JS untuk jadwal IX-A, nilai, tabungan, belajar malam, checklist, dan asisten AI.
+- Jadwal sekolah ditampilkan dari `frontend/js/schedule-data.js`.
+- Nilai, tabungan, dan aktivitas belajar pada starter frontend masih disimpan di localStorage browser, bukan database bersama.
+- Cloudflare Worker menyediakan login admin, pemeriksaan sesi, logout, dan endpoint AI.
+- Cloudflare KV binding `STORE` menyimpan percobaan login, blokir sementara, sesi admin, dan penghitung permintaan AI.
+- Skema D1 tersedia, tetapi belum terhubung ke Worker saat ini.
 
-## Penting sebelum publikasi
-Data nilai/tabungan pada starter frontend masih disimpan di localStorage browser, bukan database bersama. Karena situs dipilih publik, siapa pun yang membuka browsernya bisa melihat data lokal browser tersebut, tetapi data belum tersinkron antarpengunjung. Jangan gunakan untuk data pribadi sungguhan sebelum endpoint D1 dan kebijakan akses selesai.
-Alur OTP ini masih starter: setelah OTP valid, implementasikan session cookie HttpOnly + Secure + SameSite, proteksi CSRF, validasi origin, rate-limit OTP request, dan endpoint admin yang memeriksa session. Jangan aktifkan halaman admin sebagai panel produksi sebelum itu selesai. IP block berdasarkan IP saja bisa berdampak ke pengguna lain di jaringan bersama.
-Gmail API memerlukan OAuth Client ID, Client Secret, Refresh Token, serta ADMIN_EMAIL. Simpan semuanya sebagai Worker secrets, bukan di frontend.
-Backup D1 perlu dijadwalkan melalui Cloudflare scheduled worker dan diuji pemulihannya.
+## Keamanan yang diterapkan di kode
+- Login admin memakai Worker Secrets `ADMIN_USERNAME` dan `ADMIN_PASSWORD`; jangan pernah menaruh kredensial di frontend atau Git.
+- Setelah 3 kegagalan login dalam jendela 15 menit, IP dan pasangan IP/username diblokir sementara. Durasi meningkat 15 menit, 1 jam, lalu 24 jam.
+- Sesi admin memakai token acak yang hanya disimpan dalam bentuk hash di KV dan dikirim ke browser melalui cookie HttpOnly, Secure, SameSite=None, Path=/api/admin, dengan masa berlaku 8 jam.
+- Endpoint admin memeriksa Origin dan sesi di backend. CORS hanya mengizinkan APP_ORIGIN.
+- Endpoint AI membatasi panjang pesan dan menerapkan penghitung permintaan 30 pesan per IP per menit.
+- Cloudflare Pages memakai security headers dan Content Security Policy dari `frontend/_headers`.
+- Request body login dan AI dibatasi berdasarkan ukuran aktual, bukan hanya Content-Length.
 
-## Deploy ringkas
-1. Buat repo GitHub lalu push isi folder.
-2. Buat Cloudflare D1 database dan jalankan `database/schema.sql`.
-3. Isi `database_id` di `worker/wrangler.toml`.
-4. Pasang Worker secrets: `OPENAI_API_KEY`, `OPENAI_MODEL`, `ADMIN_EMAIL`, `GMAIL_CLIENT_ID`, `GMAIL_CLIENT_SECRET`, `GMAIL_REFRESH_TOKEN`.
-5. Deploy Worker dengan Wrangler.
-6. Hubungkan folder `frontend` ke Cloudflare Pages. Atur route `/api/*` ke Worker atau gunakan Pages Functions/proxy yang sesuai.
-7. Ganti `APP_ORIGIN` dan tambahkan CORS allowlist yang hanya mengizinkan domain produksi.
+## Batasan yang masih perlu diperhatikan
+- Penghitung KV adalah mitigasi dasar, bukan rate limiter atomik. KV bersifat eventually consistent sehingga request paralel atau perpindahan lokasi edge dapat melewati batas. Pasang Cloudflare WAF/Rate Limiting Rules untuk endpoint `/api/admin/login` dan `/api/ai` sebagai lapisan tambahan.
+- Cookie lintas-origin memakai SameSite=None. Browser yang memblokir third-party cookies dapat menolak sesi jika frontend dan API berada pada site berbeda. Untuk keandalan terbaik, gunakan custom domain dalam satu site atau proxy API melalui Pages Functions dengan origin yang sama.
+- APP_ORIGIN di wrangler.toml harus sama persis dengan origin frontend yang benar-benar dipakai pengunjung. Jangan menambahkan slash di akhir.
+- Tidak ada MFA/2FA. Tambahkan sebelum menyimpan data yang sensitif atau membuka panel ke banyak admin.
+- Admin dashboard saat ini hanya menampilkan ringkasan dan jadwal; belum ada endpoint pengelolaan data admin.
+- Nilai dan tabungan masih localStorage. Data itu bukan privat dari orang lain yang memakai browser/perangkat yang sama dan tidak tersinkron antarpengunjung.
+- D1 schema dan audit_log belum dipakai oleh Worker. Jangan menganggap audit log atau database sudah aktif.
+- IP blocking dapat memengaruhi orang lain yang memakai jaringan publik/NAT yang sama.
+
+## Konfigurasi Cloudflare
+Pastikan Worker mempunyai:
+- KV binding bernama `STORE` dengan namespace yang sesuai dengan ID di `worker/wrangler.toml`.
+- Workers AI binding bernama `AI`.
+- Worker Secrets: `ADMIN_USERNAME` dan `ADMIN_PASSWORD`.
+- Variable `APP_ORIGIN` yang cocok dengan domain frontend.
+
+Gunakan password admin unik dan panjang. Jika password lama pernah dipakai di layanan lain atau pernah dibagikan, ganti sebelum deploy.
+
+## Deploy
+1. Pastikan repository terhubung ke Cloudflare Pages dan Worker.
+2. Pastikan binding KV `STORE` dan Workers AI `AI` aktif di Worker production.
+3. Tambahkan Worker Secrets `ADMIN_USERNAME` dan `ADMIN_PASSWORD`.
+4. Verifikasi `APP_ORIGIN` pada `worker/wrangler.toml`.
+5. Deploy Worker dan tunggu status deployment sukses.
+6. Deploy Cloudflare Pages dari folder `frontend`.
+7. Uji login, refresh dashboard, logout, tiga percobaan password salah, dan endpoint AI.
 
 ## Catatan jadwal
-Jam pada jadwal menggunakan WITA (Asia/Makassar), sesuai lokasi sekolah Wakatobi. Nama guru ditampilkan tanpa gelar.
+Jam pada jadwal menggunakan WITA (Asia/Makassar), sesuai lokasi sekolah Wakatobi.
