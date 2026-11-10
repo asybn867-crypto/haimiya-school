@@ -68,3 +68,134 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
 .music-card>small{display:block;margin-top:9px;text-align:right;color:#99897b;font:9px 'DM Mono',monospace}
 @media(max-width:1100px){.music-card{margin:0}}
 @media(max-width:700px){.music-card{margin-top:12px}.music-card iframe{height:352px}}
+
+
+/* Responsive layout system: phone, tablet, iPad and desktop */
+.shell{width:100%;max-width:1680px;margin-inline:auto;grid-template-columns:clamp(176px,15vw,230px) minmax(0,1fr) clamp(280px,22vw,340px);gap:clamp(16px,2vw,30px);padding:clamp(16px,2vw,30px)}
+main,.right-rail,.sidebar{min-width:0}
+.right-rail{padding-top:78px}
+.music-card{min-width:0}
+.music-card iframe{width:calc(100% + 32px);max-width:none;margin-left:-16px;min-width:280px}
+.ai-card,.music-card,.rail-note,.panel,.calendar-panel,.task-composer,.admin-card{min-width:0}
+img,video,iframe{max-width:100%}
+input,select,button{max-width:100%}
+.lesson,.task-card,.data-item{min-width:0}
+.lesson-name,.lesson-teacher,.task-content,.task-content strong{overflow-wrap:anywhere}
+
+@media (min-width:1440px){
+  .shell{grid-template-columns:220px minmax(0,1fr) 330px;gap:30px;padding:30px}
+  .right-rail{padding-top:82px}
+  .hero{min-height:170px;padding:32px}
+}
+@media (min-width:1101px) and (max-width:1250px){
+  .shell{grid-template-columns:190px minmax(0,1fr) 285px;gap:18px;padding:20px}
+  .right-rail{padding-top:78px}
+  .ai-card{padding:15px}
+  .music-card{padding:13px}
+}
+@media (max-width:1100px) and (min-width:701px){
+  .shell{grid-template-columns:clamp(165px,22vw,205px) minmax(0,1fr);gap:20px;padding:20px}
+  .sidebar{top:20px;height:calc(100vh - 40px)}
+  .right-rail{grid-column:2;display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,1fr);align-items:start;gap:14px;padding:0}
+  .ai-card{grid-row:span 2}
+  .music-card{margin:0;min-width:0}
+  .music-card iframe{width:100%;margin:0;min-width:280px;height:352px}
+  .rail-note{margin:0}
+  .admin-link{grid-column:1/-1;margin:0 3px 12px}
+  .study-overview{grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr)}
+  #task-form{grid-template-columns:1fr 1fr}
+  .task-title-field{grid-column:1/-1}
+  #task-form>.primary{grid-column:1/-1}
+}
+@media (max-width:850px) and (min-width:701px){
+  .shell{grid-template-columns:155px minmax(0,1fr);gap:15px;padding:15px}
+  .brand{font-size:17px;gap:8px}
+  .brand-mark{width:36px;height:36px}
+  nav{margin-top:28px}
+  .nav-link{padding:11px 9px;font-size:12px}
+  .nav-link span{margin-left:5px}
+  .right-rail{grid-template-columns:minmax(0,1fr)}
+  .ai-card{grid-row:auto}
+  .music-card{max-width:100%}
+  .music-card iframe{height:352px}
+  .admin-link{grid-column:auto}
+  .lesson{grid-template-columns:86px minmax(0,1fr) auto;padding:12px;gap:9px}
+  .lesson-name{font-size:12px}
+  .lesson-tag{font-size:8px}
+  .study-overview{grid-template-columns:1fr}
+}
+@media (max-width:700px){
+  .shell{display:flex;flex-direction:column;gap:0;padding:14px;max-width:620px}
+  .sidebar{position:static;height:auto;padding:0}
+  .brand{font-size:18px}
+  nav{display:flex;gap:6px;overflow-x:auto;overscroll-behavior-x:contain;margin:15px -2px 18px;padding:2px 2px 7px;scrollbar-width:thin}
+  .nav-link{flex:0 0 auto;min-height:42px;padding:10px 12px;font-size:12px}
+  .nav-link span{margin-left:5px}
+  .sidebar-bottom{display:none}
+  main{width:100%;padding:0 0 24px}
+  .topbar{gap:10px;margin-bottom:17px}
+  .topbar h1{font-size:21px}
+  .clock strong{font-size:17px}
+  .clock small{font-size:9px}
+  .hero{min-height:128px;padding:19px;border-radius:18px}
+  .hero h2{font-size:20px}
+  .hero-stamp{padding:9px 12px}
+  .section-head{margin:23px 0 12px}
+  .section-head h2{font-size:18px}
+  .day-tabs{scrollbar-width:thin}
+  .day-tab{min-height:38px;padding:8px 13px;font-size:11px}
+  .lesson{grid-template-columns:78px minmax(0,1fr);gap:8px;padding:11px;border-radius:12px}
+  .lesson-time{font-size:9px}
+  .lesson-name{font-size:12px}
+  .lesson-teacher{font-size:10px}
+  .lesson-tag{grid-column:2;justify-self:start;font-size:8px}
+  .right-rail{display:flex;flex-direction:column;gap:12px;width:100%;padding:0;margin:8px 0 0}
+  .ai-card{width:100%;padding:16px}
+  .ai-card .chat-log{max-height:230px}
+  .music-card{width:100%;margin:0;padding:14px}
+  .music-card iframe{width:100%;min-width:280px;height:352px;margin:0}
+  .rail-note{width:100%;margin:0}
+  .admin-link{margin:4px 3px 18px}
+  .form-row{flex-direction:column}
+  .panel{padding:15px}
+  .saving-stats{gap:8px}
+  .saving-stats>div{padding:12px}
+  .balance-redesign{padding:19px}
+  .balance-redesign strong{font-size:25px}
+  .study-overview{grid-template-columns:1fr}
+  .study-heading{gap:8px}
+  .study-heading h2{font-size:21px}
+  .calendar-panel{padding:11px}
+  .calendar-weekdays,.calendar-grid{gap:3px}
+  .calendar-day,.calendar-blank{min-height:38px}
+  #task-form{grid-template-columns:1fr 1fr}
+  .task-title-field,#task-form>.primary{grid-column:1/-1}
+  .task-card{grid-template-columns:20px minmax(0,1fr) auto;gap:8px;padding:11px}
+  .task-status{grid-column:2;grid-row:2;justify-self:start}
+  .task-tools{grid-column:3;grid-row:1/3;flex-direction:column}
+}
+@media (max-width:390px){
+  .shell{padding:11px}
+  .brand{font-size:16px}
+  .nav-link{padding:9px 10px;font-size:11px}
+  .topbar h1{font-size:19px}
+  .clock strong{font-size:15px}
+  .hero{padding:16px}
+  .hero-stamp{display:none}
+  .calendar-toolbar{gap:7px}
+  .calendar-toolbar>div{min-width:90px}
+  .calendar-day,.calendar-blank{min-height:34px}
+  .calendar-day{font-size:11px}
+  .task-filters button{padding:7px 10px}
+  .task-card{grid-template-columns:18px minmax(0,1fr)}
+  .task-status{grid-column:2;grid-row:auto}
+  .task-tools{grid-column:2;grid-row:auto;flex-direction:row}
+}
+@media (max-height:520px) and (orientation:landscape) and (max-width:950px){
+  .sidebar{position:static;height:auto}
+  .right-rail{padding-top:0}
+  .hero{min-height:110px}
+}
+@supports (padding:max(0px)){
+  .shell{padding-left:max(14px,env(safe-area-inset-left));padding-right:max(14px,env(safe-area-inset-right));}
+}
