@@ -63,12 +63,51 @@
 .admin-footnote{font-size:11px;color:var(--muted);line-height:1.7;margin:13px 0 0}
 @media(max-width:900px){.admin-shell{grid-template-columns:190px minmax(0,1fr);gap:20px;padding:20px}.admin-grid{grid-template-columns:1fr}.admin-side{top:20px;height:calc(100vh - 40px)}}
 @media(max-width:650px){.admin-shell{display:block;padding:16px}.admin-side{position:static;height:auto}.admin-nav{display:flex;overflow:auto;margin:17px 0 22px}.admin-nav button{white-space:nowrap;padding:10px 12px}.admin-side-foot{display:none}.admin-top{align-items:flex-start}.admin-top h1{font-size:22px}.admin-actions{flex-direction:column;align-items:stretch}.admin-actions a,.admin-actions button{text-align:center;white-space:nowrap}.admin-hero{padding:22px;min-height:145px}.admin-hero h2{font-size:21px}.admin-hero-tag{display:none}.admin-stats{gap:8px}.admin-stat{padding:13px}.admin-stat strong{font-size:22px}.admin-stat span{font-size:10px}.admin-lesson{grid-template-columns:75px minmax(0,1fr);gap:8px}.admin-lesson em{grid-column:2;justify-self:start}}
+
+/* Admin panel visual refresh */
+body{background:#eeeff1!important;color:#292522}
+body::before{background:linear-gradient(135deg,#eceef1 0%,#f3f1ee 55%,#e9e8e7 100%)!important}
+.admin-shell{position:relative;z-index:2}
+.admin-side{background:#302b28;color:#f8f4ef;border-radius:22px;padding:22px 16px;box-shadow:0 16px 40px #241b1720}
+.admin-brand{color:#fff}
+.admin-brand small{color:#c7b5a7}
+.admin-brand-mark{background:#d77b3f;color:#fff}
+.admin-nav{margin-top:42px}
+.admin-nav button{color:#d4c9c0}
+.admin-nav button span{color:#d99a6d}
+.admin-nav button.active{background:#594437;color:#fff}
+.admin-side-foot{color:#b9aaa0}
+.admin-top h1{color:#292522}
+.admin-top .eyebrow{color:#a45d32}
+.admin-actions a{background:#fff;color:#59402f;border-color:#d9d9d9}
+.admin-actions button{background:#d77b3f;border-color:#d77b3f;color:#fff}
+.admin-hero{background:linear-gradient(115deg,#352d29 0%,#62412f 58%,#a65e35 100%);box-shadow:0 16px 34px #38271920}
+.admin-hero .eyebrow{color:#f1b98f}
+.admin-hero-tag{background:#ffffff12}
+.admin-stat,.admin-card{background:#fff;border-color:#dedfe2;box-shadow:0 8px 24px #24201c0b}
+.admin-stat strong{color:#a45d32}
+.admin-lesson{background:#f3f4f5;border-color:#e3e4e6}
+.admin-lesson time{color:#9a5d37}
+.admin-lesson em{background:#f8e5d7;color:#99552f}
+.admin-shortcut{border-color:#e2e2e4;background:#fafafa}
+.admin-shortcut b{background:#f8e6d9;color:#a45d32}
+.admin-security{background:#edf1ee;border-color:#d7e2d9}
+.admin-security strong{color:#3f6749}
+.admin-security p{color:#52645a}
+.admin-daybar button{background:#fff;border-color:#dedfe2;color:#655d57}
+.admin-daybar button.active{background:#a45d32;border-color:#a45d32;color:#fff}
+@media(max-width:650px){
+ .admin-side{background:#302b28;border-radius:18px;padding:15px}
+ .admin-nav{margin:15px 0 18px}
+ .admin-top{gap:10px}
+ .admin-actions a,.admin-actions button{min-width:90px}
+}
 </style>
 </head>
 <body style="display:none">
 <div class="admin-shell">
 <aside class="admin-side">
-<a class="admin-brand" href="index.html"><span class="admin-brand-mark">H.</span><span>Haimiya<small>ADMIN CONSOLE</small></span></a>
+<a class="admin-brand" href="index.html"><span class="admin-brand-mark">H.</span><span>Haimiya<small>ADMIN PANEL</small></span></a>
 <nav class="admin-nav" aria-label="Navigasi admin">
 <button class="active" data-view="overview"><span>⌂</span>Ringkasan</button>
 <button data-view="schedule"><span>▦</span>Jadwal kelas</button>
@@ -81,7 +120,7 @@
 <div class="admin-actions"><a href="index.html">↗ Lihat website</a><button id="logout">Keluar</button></div>
 </header>
 <section class="admin-view active" id="view-overview">
-<div class="admin-hero"><div><div class="eyebrow">WELCOME BACK, ADMIN</div><h2>Ruang kendali Haimiya.</h2><p>Semua hal penting untuk website kelas IX-A, dirangkum dalam satu tempat. Keep it neat, keep it simple.</p></div><div class="admin-hero-tag">✦ IX — A / 2026</div></div>
+<div class="admin-hero"><div><div class="eyebrow">WELCOME BACK, ADMIN</div><h2>Admin Panel.</h2><p>Semua hal penting untuk website kelas IX-A, dirangkum dalam satu tempat. Keep it neat, keep it simple.</p></div><div class="admin-hero-tag">✦ IX — A / 2026</div></div>
 <div class="admin-stats">
 <div class="admin-stat"><span>Hari terjadwal</span><strong id="stat-days">—</strong><small>Senin sampai Sabtu</small></div>
 <div class="admin-stat"><span>Agenda kelas</span><strong id="stat-items">—</strong><small>Termasuk istirahat dan apel</small></div>
