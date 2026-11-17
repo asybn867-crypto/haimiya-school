@@ -1,0 +1,25 @@
+name: Validate Haimiya branch
+
+on:
+  push:
+    branches: [redesign-haimiya-dark-ai]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  syntax:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Check JavaScript syntax
+        run: |
+          for file in worker/src/index.js worker/src/ai.js worker/src/practice.js frontend/js/latihan.js; do
+            echo "Checking $file"
+            node --input-type=module --check < "$file"
+          done
