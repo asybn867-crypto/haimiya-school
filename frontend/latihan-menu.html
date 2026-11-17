@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#f8f5f1">
+<title>Latihan Soal — Haimiya</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Nunito+Sans:wght@400;600;700;800;900&family=Zen+Maru+Gothic:wght@700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="latihan-menu.css">
+</head>
+<body>
+<header class="topbar"><a class="brand" href="index.html"><span class="brand-mark">H</span><span>haimiya<small>LEARNING SPACE</small></span></a><a class="back" href="index.html">← Kembali ke sekolah</a></header>
+<main>
+<section class="intro"><div><span class="eyebrow">YOUR PERSONAL STUDY SPACE</span><h1>Latihan soal.</h1><p>Atur sesi belajarmu. Pilih materi, tentukan jumlah soal, lalu mulai.</p></div><div class="intro-art"><span>H</span><small>LEARN AT YOUR OWN PACE</small></div></section>
+<div class="layout">
+<section class="builder">
+<div class="heading"><div><span class="eyebrow">01 / MATERI</span><h2>Mau belajar apa?</h2><p>Tentukan kelas dan mata pelajaran.</p></div><span class="step">01</span></div>
+<div class="fields"><div class="field"><label for="grade">Kelas</label><select id="grade"><option value="VII">Kelas VII</option><option value="VIII">Kelas VIII</option><option value="IX" selected>Kelas IX</option></select></div><div class="field"><label for="subject">Mata pelajaran</label><select id="subject"><option value="">Pilih mata pelajaran</option><option>Al-Qur'an Hadits</option><option>Aqidah Akhlak</option><option>Fiqih</option><option>SKI</option><option>Pendidikan Pancasila</option><option>Bahasa Indonesia</option><option>Bahasa Arab</option><option>Bahasa Inggris</option><option>Matematika</option><option>IPA</option><option>IPS</option><option>Seni Teater</option><option>Penjas Orkes</option><option>Informatika</option><option>Mulok (Riset)</option><option>Coding/AI</option></select></div></div>
+<div class="heading chapter-heading"><div><span class="eyebrow">02 / TOPIK</span><h2>Pilih bab latihan</h2><p>Pilih satu atau beberapa bab yang ingin kamu kuasai.</p></div><button type="button" id="select-all" class="text-btn">Pilih semua</button></div>
+<div id="chapter-list" class="chapter-list"><div class="empty-chapters">Pilih mata pelajaran untuk melihat daftar bab.</div></div>
+<div class="heading setup-heading"><div><span class="eyebrow">03 / PENGATURAN</span><h2>Atur sesi latihan</h2><p>Sesuaikan tingkat kesulitan dan jumlah soal.</p></div><span class="step">03</span></div>
+<div class="fields three"><div class="field"><label for="difficulty">Kesulitan</label><select id="difficulty"><option value="campuran">Campuran</option><option value="mudah">Mudah</option><option value="sedang">Sedang</option><option value="sulit">Sulit</option></select></div><div class="field"><label for="mcq-count">Pilihan ganda</label><select id="mcq-count"><option value="5">5 soal</option><option value="10">10 soal</option><option value="15">15 soal</option><option value="20">20 soal</option><option value="25">25 soal</option><option value="30">30 soal</option><option value="35" selected>35 soal</option><option value="40">40 soal</option><option value="45">45 soal</option><option value="50">50 soal</option></select></div><div class="field"><label for="essay-count">Esai</label><select id="essay-count"><option value="0">Tanpa esai</option><option value="5" selected>5 soal</option><option value="10">10 soal</option><option value="15">15 soal</option><option value="20">20 soal</option><option value="25">25 soal</option></select></div></div>
+<div class="start-row"><div><small>ESTIMASI WAKTU</small><b id="session-time">60:00 menit</b></div><button id="prepare-session" class="start-btn" disabled>Mulai latihan <span>→</span></button></div><p class="notice" id="session-notice">Pilih mata pelajaran dan minimal satu bab untuk melanjutkan.</p>
+</section>
+<aside class="side-info"><div class="tip"><span class="tip-icon">✦</span><span class="eyebrow">STUDY TIP</span><h3>Pelan-pelan, yang penting paham.</h3><p>Kerjakan dengan tenang. Tandai soal yang masih ragu dan pelajari pembahasannya setelah selesai.</p></div><div class="quick"><span class="eyebrow">SESI KAMU</span><div><span>Waktu</span><b>90 menit</b></div><div><span>Generator</span><b>AI Haimiya</b></div><div><span>Format</span><b>PG + Esai</b></div></div><a class="home-link" href="index.html">← Kembali ke Haimiya School</a></aside>
+</div>
+<section id="analisis" class="below"></section><section id="riwayat" class="below"></section>
+<div hidden><form id="tutor-form"><input id="tutor-input"><button id="tutor-send"></button></form><div id="tutor-messages"></div></div>
+<footer>HAIMIYA LEARNING SPACE <span>·</span> LEARN · PRACTICE · IMPROVE</footer>
+</main>
+<script src="js/latihan.js"></script>
+</body></html>
