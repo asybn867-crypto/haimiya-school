@@ -307,3 +307,43 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
  .brand-mark{width:40px;height:40px}
 }
 @media(max-width:390px){.hero-mascot span{display:none}.hero-mascot img{width:49px;height:49px}}
+
+/* Schedule: remove leftover dark theme and reveal Haimiya background video */
+:root{color-scheme:light}
+html,body{background:transparent;color:#382b35}
+body::before{background:linear-gradient(115deg,rgba(248,242,239,.48),rgba(248,242,239,.32))}
+.page-bg{opacity:.78;filter:saturate(.9) brightness(1);object-position:center}
+.sidebar{border-right:1px solid #eadde5}
+.brand{color:#493a50}
+.brand small{color:#9a8298}
+.brand-mark{background:linear-gradient(145deg,#9b7ba7,#655274);box-shadow:0 7px 18px #725b5b35}
+.nav-link{color:#837482}
+.nav-link.active{background:#eee4f1;color:#604d6d;box-shadow:none}
+.sidebar-bottom,.clock small,.timezone,.lesson-time,.lesson-teacher,.admin-link{color:#887985}
+.eyebrow{color:#94799b}
+.section-head h2,.study-section-head h3,.study-heading h2{color:#493a50}
+#view-schedule .day-tab{background:rgba(255,253,251,.88);border-color:#eadde5;color:#89788a;box-shadow:0 8px 22px #59412b0b}
+#view-schedule .day-tab.active{background:#6b5576;border-color:#6b5576;color:#fff}
+#view-schedule .lesson{background:rgba(255,253,251,.88);border-color:#eee2e9;color:#382b35;box-shadow:0 8px 22px #59412b0b;backdrop-filter:blur(12px)}
+#view-schedule .lesson-time,#view-schedule .lesson-teacher{color:#887985}
+#view-schedule .lesson-tag{background:#f1e8f1;color:#765d80}
+#view-schedule .lesson.active{background:rgba(255,240,235,.94);border-color:#e7a18d;box-shadow:0 5px 20px #e89b821c}
+#view-schedule .lesson.active .lesson-tag{background:#e89b82;color:#fff}
+#view-schedule .lesson.break{background:rgba(248,242,239,.9);color:#665a62}
+.ai-card,.rail-card,.rail-note{color:#382b35}
+.ai-card{background:rgba(255,253,252,.91);border-color:#e8dbe9;backdrop-filter:blur(14px)}
+.ai-card .ai-welcome{background:#fff;border-color:#efe2eb;color:#5d4968}
+.ai-card .ai-welcome p,.ai-card .ai-profile small{color:#887985}
+.ai-card .ai-suggestions button{background:#fff;border-color:#e9dce9;color:#765d80}
+.ai-card .bubble{background:#fff;border-color:#eee1d5;color:#59483b}
+.ai-card .bubble.user{background:#f1e5f1;border-color:#e7d8e9;color:#5a4664}
+.ai-card #chat-form{background:#fff;border-color:#dfcde4}
+.ai-card #chat-input{color:#382b35}
+.ai-card #chat-form button{background:#6b5576;color:#fff}
+.rail-note{background:rgba(242,232,240,.92);border-color:#e8d9e8}
+@media(max-width:700px){
+ body::before{background:rgba(248,242,239,.42)}
+ .sidebar{border:0}
+ .page-bg{opacity:.72}
+ #view-schedule .lesson{background:rgba(255,253,251,.92)}
+}
