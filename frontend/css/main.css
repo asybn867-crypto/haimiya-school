@@ -199,3 +199,44 @@ input,select,button{max-width:100%}
 @supports (padding:max(0px)){
   .shell{padding-left:max(14px,env(safe-area-inset-left));padding-right:max(14px,env(safe-area-inset-right));}
 }
+
+/* Haimiya dark redesign */
+:root{color-scheme:dark;--paper:#0b1020;--surface:#151c30;--ink:#eef0ff;--muted:#9aa5c2;--line:#29324d;--brown:#536dfe;--brown2:#a8b5ff;--orange:#a78bfa;--orange-soft:#262442;--green:#62d6a4;--shadow:0 16px 40px #0005}
+html,body{background:#0b1020;color:var(--ink)}
+body::before{background:linear-gradient(120deg,rgba(8,12,27,.93),rgba(13,18,39,.94))}
+.page-bg{opacity:.16;filter:saturate(.55) brightness(.55)}
+.shell{grid-template-columns:220px minmax(0,1fr) 300px;gap:22px;padding:22px}
+.sidebar{border-right:1px solid #29324d;padding-right:16px}
+.brand{color:#f4f5ff}.brand small{color:#8792b3}.brand-mark{background:linear-gradient(135deg,#536dfe,#9278ef);box-shadow:0 8px 24px #536dfe40}
+.nav-link{color:#aab3ce}.nav-link.active{background:linear-gradient(100deg,#263a91,#25234d);color:#fff;box-shadow:inset 0 0 0 1px #586dff70}
+.sidebar-bottom,.clock small,.timezone,.lesson-time,.lesson-teacher,.admin-link{color:#8d99b8}
+.eyebrow{color:#a8b5ff}.hero{background:linear-gradient(115deg,#1b2857,#25224b 65%,#34305f);border:1px solid #5265ba70;box-shadow:0 16px 40px #0003}
+.hero p,.eyebrow.light{color:#c5cafa}.hero-stamp{color:#c6c9ff;border-color:#9aa8ff66}
+.section-head h2,.study-section-head h3,.study-heading h2{color:#f2f3ff}
+.day-tab,.lesson,.rail-card,.rail-note,.panel,.data-item,.balance,.calendar-panel,.task-composer,.study-overview>div,.study-progress-box{background:#151c30;border-color:#29324d;color:#edf0ff;box-shadow:0 12px 28px #0002}
+.day-tab{color:#aab3ce}.day-tab.active{background:#536dfe;color:#fff;border-color:#536dfe}
+.lesson.active{background:#2b2945;border-color:#a78bfa;box-shadow:0 0 0 1px #a78bfa25}.lesson-tag{background:#252d49;color:#b9c4ff}.lesson.active .lesson-tag{background:#a78bfa;color:#11152b}.lesson.break{background:#131a2b}
+.rail-card p,.rail-note p,.task-hint{color:#aab3ce}.rail-note{background:#202544;border-color:#303b66}.ai-avatar{overflow:hidden;background:#202544;border:1px solid #6476cc}.ai-avatar img{width:100%;height:100%;object-fit:cover}
+.ai-card,.music-card{background:#151c30;border:1px solid #29324d;border-radius:20px;padding:18px;box-shadow:0 16px 36px #0003}.ai-card .ai-welcome{background:#202744;border:1px solid #303d67;color:#f0f2ff}.ai-card .ai-welcome p{color:#aeb9d8}.ai-card .ai-suggestions button{background:#202744;border:1px solid #34416d;color:#c7d0f5}.bubble{background:#202944;color:#eef0ff}.bubble.user{background:#354db8;color:#fff}.ai-card #chat-form{background:#10172a;border-color:#354064}.ai-card #chat-input{color:#fff}.ai-card #chat-form button{background:#536dfe}
+.panel input,.panel select,.task-form input,.task-field input,.task-field select,.task-field textarea{background:#10172a!important;border-color:#34405f!important;color:#f2f3ff!important}
+.primary{background:#536dfe;color:#fff}.secondary{background:#272d49;color:#d7dcf5}
+.balance,.study-card{background:linear-gradient(120deg,#263b91,#29244e);border:1px solid #4e60b7}
+.progress-track{background:#303958}.study-progress-box{background:#151c30!important}.study-progress-head,.study-meta{color:#dce1ff}.study-progress-box .progress-track i{background:#a78bfa}
+.calendar-panel,.task-composer{background:#151c30;border-color:#29324d}.calendar-toolbar strong,.calendar-detail,.calendar-weekdays,.task-field span{color:#e9ecff}.calendar-day{background:#10172a;color:#e8ebff;border-color:#303b5a}.calendar-day.is-today{border-color:#a78bfa}.calendar-day.is-selected{background:#303d83}.calendar-detail{background:#10172a;border-color:#303b5a}
+.task-card{background:#151c30;border-color:#29324d}.task-content strong{color:#eef0ff}.task-content small{color:#a3adca}.task-tools button{background:#252e4b;color:#c7d0f5}
+.music-card h3{color:#f3f4ff}.music-card small{color:#98a4c4}
+.ai-page{min-height:calc(100vh - 40px)}
+main:has(#view-ai.active) .topbar{display:none}
+.shell:has(#view-ai.active){grid-template-columns:220px minmax(0,1fr)}
+.shell:has(#view-ai.active) .right-rail{display:none}
+.ai-page-shell{height:calc(100vh - 44px);min-height:650px;display:flex;flex-direction:column;background:#0e1426;border:1px solid #283252;border-radius:25px;overflow:hidden;box-shadow:0 20px 55px #0005}
+.ai-page-header{height:78px;flex:none;display:flex;align-items:center;justify-content:space-between;padding:14px 22px;border-bottom:1px solid #27314e;background:#10172b}
+.ai-page-identity{display:flex;align-items:center;gap:13px}.ai-page-identity>img{width:48px;height:48px;object-fit:cover;border-radius:50%;border:2px solid #6679df}.ai-page-identity strong{display:block;font-size:17px}.ai-page-identity small{display:block;color:#9da9c8;font-size:11px;margin-top:4px}.ai-page-identity small i{display:inline-block;width:7px;height:7px;border-radius:50%;background:#60d6a4;margin-right:5px}
+.ai-new-chat{border:1px solid #3a4770;background:#202947;color:#dce3ff;padding:10px 14px;border-radius:12px;font-weight:800;cursor:pointer}
+.ai-hero{margin:18px 20px 4px;min-height:220px;max-height:270px;flex:none;display:flex;align-items:center;justify-content:space-between;overflow:hidden;position:relative;border-radius:21px;background:radial-gradient(circle at 75% 45%,#45416f 0,#252b50 34%,#171e38 75%);border:1px solid #4b5487}
+.ai-hero-copy{padding:28px 34px;z-index:1}.ai-kicker{font:10px 'DM Mono';letter-spacing:2px;color:#b9c5ff}.ai-hero h2{font:900 clamp(20px,3vw,34px) 'Zen Maru Gothic';color:#f2f2ff;margin:12px 0 4px}.ai-hero-copy p{font:900 clamp(16px,2.2vw,24px) 'Zen Maru Gothic';color:#b4a4ff;margin:0 0 13px}.ai-hero-note{font-size:12px;color:#c0c8e4}.ai-hero>img{height:100%;width:39%;max-width:360px;object-fit:cover;object-position:50% 28%;align-self:stretch;mask-image:linear-gradient(90deg,transparent 0%,#000 25%)}
+.ai-chat-area{flex:1;min-height:0;overflow:auto;padding:18px 26px}.ai-chat-log{display:flex;flex-direction:column;gap:16px;max-width:900px;margin:0 auto}.ai-message{display:flex;align-items:flex-end;gap:10px;max-width:82%}.ai-message.bot{align-self:flex-start}.ai-message.user{align-self:flex-end;flex-direction:row-reverse}.ai-message>img{width:34px;height:34px;border-radius:50%;object-fit:cover;border:1px solid #596bb5;flex:none}.ai-message-bubble{padding:13px 16px;border-radius:18px;background:#202943;border:1px solid #2e3a5d;color:#edf0ff;font-size:14px;line-height:1.65;white-space:pre-wrap}.ai-message.user .ai-message-bubble{background:#354db8;border-color:#536dfe;color:white;border-bottom-right-radius:5px}.ai-message.bot .ai-message-bubble{border-bottom-left-radius:5px}
+.ai-chat-composer{flex:none;padding:12px 22px 17px;background:linear-gradient(180deg,#0e142600,#0e1426 25%)}.ai-chat-composer form{max-width:940px;margin:auto;display:flex;align-items:center;gap:10px;padding:8px 10px 8px 14px;background:#171f36;border:1px solid #3a466c;border-radius:20px;box-shadow:0 8px 24px #0003}.ai-chat-composer input{flex:1;min-width:0;background:transparent;border:0;outline:0;color:#fff;font:14px 'Nunito Sans';padding:9px}.ai-chat-composer input::placeholder{color:#8793b5}.ai-attach,.ai-send{width:40px;height:40px;border:0;border-radius:13px;flex:none}.ai-attach{background:#252e4d;color:#aeb9dd;font-size:22px}.ai-send{background:#536dfe;color:#fff;font-size:19px;cursor:pointer}.ai-send:disabled{opacity:.55}.ai-chat-composer>small{display:block;text-align:center;color:#7f8bad;font-size:10px;margin-top:9px}
+.ai-page.has-messages .ai-hero{display:none}
+@media(max-width:1100px){.shell{grid-template-columns:190px minmax(0,1fr)}.shell:has(#view-ai.active){grid-template-columns:190px minmax(0,1fr)}}
+@media(max-width:700px){.shell{display:block;padding:14px}.sidebar{border:0;padding:0}.ai-page-shell{height:calc(100dvh - 150px);min-height:560px;border-radius:18px}.ai-page-header{height:66px;padding:10px 13px}.ai-page-identity>img{width:40px;height:40px}.ai-hero{margin:12px 10px 2px;min-height:175px}.ai-hero-copy{padding:18px 15px;max-width:67%}.ai-hero>img{width:42%;object-position:48% 25%}.ai-hero-note{font-size:10px}.ai-chat-area{padding:15px 12px}.ai-message{max-width:94%}.ai-message-bubble{font-size:13px;padding:11px 13px}.ai-chat-composer{padding:10px 10px 13px}.shell:has(#view-ai.active) .right-rail{display:none}}
