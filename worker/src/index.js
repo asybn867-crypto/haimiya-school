@@ -1,5 +1,6 @@
 import { login, checkSession, logout } from './auth.js';
 import { askAI } from './ai.js';
+import { generate as generatePractice, submit as submitPractice } from './practice.js';
 const DEFAULT_ORIGIN='https://haimiya-school.asybn867.workers.dev';
 const appOrigin=env=>env.APP_ORIGIN||DEFAULT_ORIGIN;
 const cors=(origin,env)=>origin===appOrigin(env)?{'Access-Control-Allow-Origin':origin,'Access-Control-Allow-Credentials':'true','Vary':'Origin'}:{};
@@ -12,6 +13,8 @@ if(u.pathname==='/api/admin/login'&&req.method==='POST')return result(await logi
 if(u.pathname==='/api/admin/session'&&req.method==='GET')return result(await checkSession(req,env),origin,env);
 if(u.pathname==='/api/admin/logout'&&req.method==='POST')return result(await logout(req,env),origin,env);
 if(u.pathname==='/api/ai'&&req.method==='POST'){const r=await askAI(req,env);return json(r.body??r,r.status??200,origin,env)}
-if(['/api/admin/login','/api/admin/session','/api/admin/logout','/api/ai'].includes(u.pathname))return json({error:'Method not allowed.'},405,origin,env,{'Allow':u.pathname.endsWith('/session')?'GET, OPTIONS':'POST, OPTIONS'});
+if(u.pathname==='/api/practice/generate'&&req.method==='POST'){const r=await generatePractice(req,env);return new Response(r.body,{status:r.status,headers:{...base,...cors(origin,env)}})}
+if(u.pathname==='/api/practice/submit'&&req.method==='POST'){const r=await submitPractice(req,env);return new Response(r.body,{status:r.status,headers:{...base,...cors(origin,env)}})}
+if(['/api/admin/login','/api/admin/session','/api/admin/logout','/api/ai','/api/practice/generate','/api/practice/submit'].includes(u.pathname))return json({error:'Method not allowed.'},405,origin,env,{'Allow':u.pathname.endsWith('/session')?'GET, OPTIONS':'POST, OPTIONS'});
 return json({error:'Not found.'},404,origin,env)
 }catch(e){console.error('Worker request failed:',e?.message||e);return json({error:'Internal server error.'},500,origin,env)}}};
