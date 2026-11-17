@@ -242,3 +242,68 @@ main:has(#view-ai.active) .topbar{display:none}
 @media(max-width:700px){.shell{display:block;padding:14px}.sidebar{border:0;padding:0}.ai-page-shell{height:calc(100dvh - 150px);min-height:560px;border-radius:18px}.ai-page-header{height:66px;padding:10px 13px}.ai-page-identity>img{width:40px;height:40px}.ai-hero{margin:12px 10px 2px;min-height:175px}.ai-hero-copy{padding:18px 15px;max-width:67%}.ai-hero>img{width:42%;object-position:48% 25%}.ai-hero-note{font-size:10px}.ai-chat-area{padding:15px 12px}.ai-message{max-width:94%}.ai-message-bubble{font-size:13px;padding:11px 13px}.ai-chat-composer{padding:10px 10px 13px}.shell:has(#view-ai.active) .right-rail{display:none}}
 
 #nav a.nav-link{display:block;text-decoration:none}
+
+
+/* Haimiya identity restoration */
+:root{--paper:#f7f0e8;--surface:#fffdfb;--ink:#382b35;--muted:#887985;--line:#eadde5;--brown:#66506f;--brown2:#8d7198;--orange:#e89b82;--orange-soft:#fff0eb;--shadow:0 14px 34px #4b35510d}
+body{background:var(--paper);color:var(--ink)}
+body::before{background:rgba(248,242,239,.84)}
+.shell{gap:clamp(18px,2.2vw,32px)}
+.brand{gap:13px;font-size:21px;letter-spacing:-.4px}
+.brand-mark{position:relative;width:46px;height:46px;border-radius:17px 17px 17px 7px;background:linear-gradient(145deg,#9b7ba7,#655274);box-shadow:0 7px 18px #725b7c35;font-size:22px}
+.brand-mark:after{content:"♡";position:absolute;right:-5px;top:-6px;color:#e99b89;font:700 15px 'Nunito Sans';text-shadow:0 1px #fff}
+.brand small{letter-spacing:1.25px;color:#9a8298}
+nav{margin-top:44px;gap:7px}
+.nav-link{border:1px solid transparent;border-radius:15px;color:#837482;transition:background .18s,border-color .18s,transform .18s}
+.nav-link:hover{background:#fff8f7;border-color:#efe1e7;transform:translateX(2px)}
+.nav-link.active{background:#eee4f1;border-color:#e6d8eb;color:#604d6d}
+.topbar .eyebrow,.section-head .eyebrow,.study-heading .eyebrow,.study-section-head .eyebrow{color:#94799b}
+.topbar h1{color:#493a50}
+.hero{background:linear-gradient(115deg,#665272 0%,#80688b 58%,#a88491 100%);border:1px solid #8f7697;border-radius:25px;min-height:174px;padding:28px 30px;box-shadow:0 15px 35px #69557524}
+.hero:after{content:"";position:absolute;width:210px;height:210px;border:1px solid #ffffff20;border-radius:50%;right:45px;top:-115px;pointer-events:none}
+.hero h2{font-size:27px;letter-spacing:-.4px}
+.hero p{color:#f2e8f1}
+.hero-mascot{position:relative;z-index:1;display:flex;align-items:center;gap:12px;padding:8px 15px 8px 8px;border:1px solid #ffffff50;border-radius:22px;background:#ffffff18;backdrop-filter:blur(8px);transform:rotate(2deg)}
+.hero-mascot img{width:76px;height:76px;object-fit:cover;border-radius:17px;border:2px solid #fff8}
+.hero-mascot span{max-width:84px;color:#fff4f3;font:italic 11px 'Zen Maru Gothic';line-height:1.5}
+.section-head h2,.study-section-head h3{color:#493a50}
+.day-tab{border-color:#eadde5;color:#89788a}
+.day-tab.active{background:#6b5576;border-color:#6b5576}
+.lesson{border-radius:16px;background:#fffdfd;border-color:#eee2e9}
+.lesson.active{background:#fff0eb;border-color:#e7a18d}
+.lesson.active .lesson-tag{background:#e89b82}
+.right-rail{padding-top:80px}
+.ai-card{background:linear-gradient(155deg,#fffdfc,#f5edf7);border:1px solid #e8dbe9;box-shadow:0 16px 38px #5e4a6412;border-radius:24px}
+.ai-avatar{background:linear-gradient(145deg,#f5d9d2,#e7c5dc);color:#725675}
+.ai-avatar img{width:100%;height:100%;object-fit:cover;border-radius:inherit}
+.ai-profile h3{color:#5b4865}
+.ai-welcome{background:#fff;border-color:#efe2eb}
+.ai-welcome strong{color:#5d4968}
+.ai-suggestions button{background:#fff;border-color:#e9dce9;color:#765d80}
+.ai-card .bubble.user{background:#f1e5f1;border-color:#e7d8e9;color:#5a4664}
+.ai-card #chat-form{border-color:#dfcde4}
+.ai-card #chat-form button,.primary{background:#6b5576}
+.secondary{background:#eee5f0;color:#65516f}
+.rail-note{background:#f2e8f0;border-color:#e8d9e8}
+.rail-note span{color:#d98e83}
+.balance-redesign,.study-card{background:linear-gradient(120deg,#665272,#80688b)!important}
+.balance-icon{color:#f8c7b7}
+.study-date-chip{background:#eee4f1;color:#665272}
+.study-main-stat strong,.saving-stats strong{color:#665272}
+.study-progress-head strong{color:#a16e8d}
+.study-progress-box .progress-track i{background:linear-gradient(90deg,#9b7ba7,#e7a18d)}
+.calendar-day.is-selected{background:#6b5576;border-color:#6b5576}
+.task-filters button.active{background:#6b5576;border-color:#6b5576}
+.task-check input:checked+.task-checkmark{background:#6b5576;border-color:#6b5576}
+.task-tools button{color:#665272;background:#eee5f0}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline-color:#b58ac0}
+@media(max-width:700px){
+ body::before{background:rgba(248,242,239,.91)}
+ .hero{min-height:148px;padding:19px;border-radius:20px}
+ .hero h2{font-size:21px}
+ .hero-mascot{gap:8px;padding:6px 10px 6px 6px}
+ .hero-mascot img{width:56px;height:56px;border-radius:14px}
+ .hero-mascot span{font-size:9px;max-width:66px}
+ .brand-mark{width:40px;height:40px}
+}
+@media(max-width:390px){.hero-mascot span{display:none}.hero-mascot img{width:49px;height:49px}}
