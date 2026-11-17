@@ -2,10 +2,10 @@
 <html lang="id">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#f7f2eb"><title>Haimiya — Ruang Kelas IX-A</title><link rel="icon" type="image/jpeg" href="hiii.jpg">
+<meta name="theme-color" content="#0b1020"><title>Haimiya — Ruang Kelas IX-A</title><link rel="icon" type="image/jpeg" href="hiii.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Nunito+Sans:wght@400;500;600;700;800;900&family=Zen+Maru+Gothic:wght@500;700;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/main.css?v=20261110-spotify">
+<link rel="stylesheet" href="css/main.css?v=20261117-dark-redesign">
 </head>
 <body>
 <video class="page-bg" autoplay muted loop playsinline preload="auto"><source src="bg-video.mp4" type="video/mp4"></video>
@@ -17,6 +17,7 @@
     <button class="nav-link" data-view="grades">▤ <span>Nilai</span></button>
     <button class="nav-link" data-view="savings">◈ <span>Tabungan</span></button>
     <button class="nav-link" data-view="study">✧ <span>Belajar malam</span></button>
+    <button class="nav-link" data-view="ai">✦ <span>AI Haimiya</span></button>
   </nav>
   <div class="sidebar-bottom"><span class="live-dot"></span> IX-A · 2026/2027</div>
 </aside>
@@ -61,11 +62,19 @@
   <div class="task-filters" id="task-filters"><button class="active" data-filter="active">Aktif</button><button data-filter="done">Selesai</button><button data-filter="expired">Terlewat</button><button data-filter="all">Semua</button></div>
   <div class="checklist" id="checklist"></div>
 </section>
+<section class="view ai-page" id="view-ai">
+  <div class="ai-page-shell">
+    <header class="ai-page-header"><div class="ai-page-identity"><img src="https://d2ol7oe51mr4n9.cloudfront.net/user_3K5vokgKnhYkdCAswiZ9nmioeCe/5f8192b9-88b3-43dc-b261-ef66c627ae4e.jpg" alt="Haimiya"><div><strong>AI Haimiya</strong><small><i></i> Online · Teman belajarmu</small></div></div><button type="button" id="ai-new-chat" class="ai-new-chat">＋ Chat baru</button></header>
+    <div class="ai-hero" id="ai-hero"><div class="ai-hero-copy"><span class="ai-kicker">YOUR STUDY COMPANION</span><h2>HAIIII, MW NGAPAINNN?</h2><p>AKU SIAPP TEMENIN KMUU😖</p><span class="ai-hero-note">Belajar, diskusi, atau cari tahu sesuatu. Kita mulai dari sini.</span></div><img src="https://d2ol7oe51mr4n9.cloudfront.net/user_3K5vokgKnhYkdCAswiZ9nmioeCe/5f8192b9-88b3-43dc-b261-ef66c627ae4e.jpg" alt="Karakter Haimiya"></div>
+    <div class="ai-chat-area"><div class="ai-chat-log" id="ai-chat-log"><div class="ai-message bot"><img src="https://d2ol7oe51mr4n9.cloudfront.net/user_3K5vokgKnhYkdCAswiZ9nmioeCe/5f8192b9-88b3-43dc-b261-ef66c627ae4e.jpg" alt=""><div class="ai-message-bubble">Haiii! Mau belajar apa hari ini? Aku bisa bantu jelasin materi, bahas soal, atau nemenin kamu memahami topik yang sulit. ♡</div></div></div></div>
+    <div class="ai-chat-composer"><form id="ai-chat-form"><button type="button" class="ai-attach" aria-label="Lampiran" title="Lampiran" disabled>＋</button><input id="ai-chat-input" maxlength="2000" placeholder="Ketik pesan..." autocomplete="off"><button type="submit" aria-label="Kirim pesan" class="ai-send">➤</button></form><small>AI bisa membuat kesalahan. Periksa kembali informasi penting.</small></div>
+  </div>
+</section>
 </main>
 <aside class="right-rail">
   <div class="ai-card">
     <div class="ai-topline"><span class="ai-live"><i></i> ONLINE</span><span class="ai-spark">✦</span></div>
-    <div class="ai-profile"><div class="ai-avatar"><span>♡</span><i>✦</i></div><div><div class="eyebrow">YOUR STUDY PARTNER</div><h3>Senpaii~~~</h3><small>Haimiya assistant</small></div></div>
+    <div class="ai-profile"><div class="ai-avatar"><img src="https://d2ol7oe51mr4n9.cloudfront.net/user_3K5vokgKnhYkdCAswiZ9nmioeCe/5f8192b9-88b3-43dc-b261-ef66c627ae4e.jpg" alt="Haimiya"></div><div><div class="eyebrow">YOUR STUDY PARTNER</div><h3>Senpaii~~~</h3><small>Haimiya assistant</small></div></div>
     <div class="ai-welcome"><strong>Haii syngg, kamu lagi ngapainn?</strong><p>Mau bahas pelajaran, tugas, atau sekadar tanya sesuatu? Aku siap bantu.</p></div>
     <div class="ai-suggestions"><button type="button" data-prompt="Bantu aku memahami materi pelajaran hari ini.">Jelaskan materi</button><button type="button" data-prompt="Bantu aku membuat rencana belajar malam ini.">Rencana belajar</button></div>
     <div id="chat-log" class="chat-log"><div class="bubble bot">Pilih topik atau tulis pertanyaanmu di bawah yaa ✨</div></div>
@@ -82,5 +91,5 @@
   <a class="admin-link" href="admin.html">Admin panel ↗</a>
 </aside>
 </div>
-<script src="js/schedule-data.js"></script><script src="js/app.js?v=20261115-ai-actions"></script>
+<script src="js/schedule-data.js"></script><script src="js/app.js?v=20261117-dark-redesign"></script><script src="js/ai-page.js?v=20261117"></script>
 </body></html>
