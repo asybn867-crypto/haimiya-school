@@ -45,3 +45,5 @@ footer{border-color:var(--line);color:#a18f9e}footer span{color:#a17ca7}
 .session-format select{display:block;min-width:105px;margin-top:5px;padding:9px 11px;border:1px solid #e5d9e4;border-radius:8px;background:#fff;color:#59485e;font:700 12px 'Nunito Sans'}
 .chapter-option{line-height:1.4}
 @media(max-width:650px){.session-format{grid-template-columns:1fr 1fr}.session-format .btn-primary{grid-column:1/-1}}
+
+.grade-picker{max-width:420px;margin-bottom:14px}.grade-picker select{max-width:100%}
