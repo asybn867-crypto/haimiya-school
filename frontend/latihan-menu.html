@@ -1,31 +1,79 @@
 <!doctype html>
 <html lang="id">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#f8f5f1">
-<title>Latihan Soal — Haimiya</title>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#f4f6fb">
+<title>Latihan & Tryout — Haimiya</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Nunito+Sans:wght@400;600;700;800;900&family=Zen+Maru+Gothic:wght@700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800;900&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="latihan-menu.css">
 </head>
 <body>
-<header class="topbar"><a class="brand" href="index.html"><span class="brand-mark">H</span><span>haimiya<small>LEARNING SPACE</small></span></a><a class="back" href="index.html">← Kembali ke sekolah</a></header>
-<main>
-<section class="intro"><div><span class="eyebrow">YOUR PERSONAL STUDY SPACE</span><h1>Latihan soal.</h1><p>Atur sesi belajarmu. Pilih materi, tentukan jumlah soal, lalu mulai.</p></div><div class="intro-art"><span>H</span><small>LEARN AT YOUR OWN PACE</small></div></section>
-<div class="layout">
-<section class="builder">
-<div class="heading"><div><span class="eyebrow">01 / MATERI</span><h2>Mau belajar apa?</h2><p>Tentukan kelas dan mata pelajaran.</p></div><span class="step">01</span></div>
-<div class="fields"><div class="field"><label for="grade">Kelas</label><select id="grade"><option value="VII">Kelas VII</option><option value="VIII">Kelas VIII</option><option value="IX" selected>Kelas IX</option></select></div><div class="field"><label for="subject">Mata pelajaran</label><select id="subject"><option value="">Pilih mata pelajaran</option><option>Al-Qur'an Hadits</option><option>Aqidah Akhlak</option><option>Fiqih</option><option>SKI</option><option>Pendidikan Pancasila</option><option>Bahasa Indonesia</option><option>Bahasa Arab</option><option>Bahasa Inggris</option><option>Matematika</option><option>IPA</option><option>IPS</option><option>Seni Teater</option><option>Penjas Orkes</option><option>Informatika</option><option>Mulok (Riset)</option><option>Coding/AI</option></select></div></div>
-<div class="heading chapter-heading"><div><span class="eyebrow">02 / TOPIK</span><h2>Pilih bab latihan</h2><p>Pilih satu atau beberapa bab yang ingin kamu kuasai.</p></div><button type="button" id="select-all" class="text-btn">Pilih semua</button></div>
-<div id="chapter-list" class="chapter-list"><div class="empty-chapters">Pilih mata pelajaran untuk melihat daftar bab.</div></div>
-<div class="heading setup-heading"><div><span class="eyebrow">03 / PENGATURAN</span><h2>Atur sesi latihan</h2><p>Sesuaikan tingkat kesulitan dan jumlah soal.</p></div><span class="step">03</span></div>
-<div class="fields three"><div class="field"><label for="difficulty">Kesulitan</label><select id="difficulty"><option value="campuran">Campuran</option><option value="mudah">Mudah</option><option value="sedang">Sedang</option><option value="sulit">Sulit</option></select></div><div class="field"><label for="mcq-count">Pilihan ganda</label><select id="mcq-count"><option value="5">5 soal</option><option value="10">10 soal</option><option value="15">15 soal</option><option value="20">20 soal</option><option value="25">25 soal</option><option value="30">30 soal</option><option value="35" selected>35 soal</option><option value="40">40 soal</option><option value="45">45 soal</option><option value="50">50 soal</option></select></div><div class="field"><label for="essay-count">Esai</label><select id="essay-count"><option value="0">Tanpa esai</option><option value="5" selected>5 soal</option><option value="10">10 soal</option><option value="15">15 soal</option><option value="20">20 soal</option><option value="25">25 soal</option></select></div></div>
-<div class="start-row"><div><small>ESTIMASI WAKTU</small><b id="session-time">60:00 menit</b></div><button id="prepare-session" class="start-btn" disabled>Mulai latihan <span>→</span></button></div><p class="notice" id="session-notice">Pilih mata pelajaran dan minimal satu bab untuk melanjutkan.</p>
-</section>
-<aside class="side-info"><div class="tip"><span class="tip-icon">✦</span><span class="eyebrow">STUDY TIP</span><h3>Pelan-pelan, yang penting paham.</h3><p>Kerjakan dengan tenang. Tandai soal yang masih ragu dan pelajari pembahasannya setelah selesai.</p></div><div class="quick"><span class="eyebrow">SESI KAMU</span><div><span>Waktu</span><b>90 menit</b></div><div><span>Generator</span><b>AI Haimiya</b></div><div><span>Format</span><b>PG + Esai</b></div></div><a class="home-link" href="index.html">← Kembali ke Haimiya School</a></aside>
-</div>
-<section id="analisis" class="below"></section><section id="riwayat" class="below"></section>
-<div hidden><form id="tutor-form"><input id="tutor-input"><button id="tutor-send"></button></form><div id="tutor-messages"></div></div>
-<footer>HAIMIYA LEARNING SPACE <span>·</span> LEARN · PRACTICE · IMPROVE</footer>
+<header class="rg-top">
+ <a class="rg-brand" href="index.html"><span class="rg-avatar">H</span><span><b>haimiya</b><small>LEARNING SPACE</small></span></a>
+ <div class="rg-profile"><span class="profile-orb">✦</span><span><b>Level 1</b><small>🟢 XP <strong id="xp-count">0</strong>　🟠 0</small></span></div>
+ <a class="rg-friend" href="#fitur"><span>🧑‍🎓</span><span>Pilih Teman Belajar</span></a>
+ <a class="rg-back" href="index.html">← Sekolah</a>
+</header>
+<main class="rg-main" id="materi">
+ <div class="rg-search-row"><label class="rg-search"><span>⌕</span><input id="subject-search" type="search" placeholder="Cari mata pelajaran atau latihan..."></label><a class="round-tool" href="#riwayat" aria-label="Riwayat">◷</a><a class="round-tool" href="#fitur" aria-label="Fitur">♧</a></div>
+ <div class="rg-grade"><span>Kelas IX · Kurikulum Merdeka</span><span>⌄</span></div>
+ <section class="rg-banner">
+  <div class="banner-copy"><span class="banner-kicker">HAIMIYA STUDY CHALLENGE</span><h1>Belajar hari ini,<br>lebih siap esok hari.</h1><p>Latihan terarah, tryout, dan evaluasi dalam satu tempat.</p><a href="#latihan" class="banner-cta">Mulai belajar <b>→</b></a></div>
+  <div class="banner-art" aria-hidden="true"><span class="art-sun"></span><span class="art-book">📚</span><span class="art-star">✦</span><span class="art-pencil">✎</span></div>
+ </section>
+ <section class="rg-progress">
+  <div class="progress-top"><div><b>Kamu sedang membangun progres! 🔥</b><small>Capaian belajarmu di Haimiya</small></div><a href="#riwayat">Lihat progres</a></div>
+  <div class="progress-track"><i id="daily-progress"></i></div>
+  <div class="progress-meta"><span><b id="daily-correct">0</b> soal benar</span><span><b id="daily-total">0</b> sesi selesai</span><span><b id="daily-xp">0 XP</b></span></div>
+ </section>
+ <section class="rg-panel" id="pelajaran">
+  <div class="rg-panel-heading"><div><span class="section-eyebrow">RUANG BELAJAR</span><h2>Pelajaran favorit</h2></div><a href="#latihan">Lihat semua</a></div>
+  <div class="subject-grid" id="subject-grid">
+   <button class="subject-card" data-subject="Matematika"><span class="subject-icon math">∑</span><b>Matematika</b></button>
+   <button class="subject-card" data-subject="Bahasa Indonesia"><span class="subject-icon indo">文</span><b>Bahasa Indonesia</b></button>
+   <button class="subject-card" data-subject="IPA"><span class="subject-icon science">⚗</span><b>IPA</b></button>
+   <button class="subject-card" data-subject="IPS"><span class="subject-icon social">🌏</span><b>IPS</b></button>
+   <button class="subject-card" data-subject="Pendidikan Pancasila"><span class="subject-icon civic">★</span><b>PPKn</b></button>
+   <button class="subject-card" data-subject="Bahasa Inggris"><span class="subject-icon english">A</span><b>Bahasa Inggris</b></button>
+   <button class="subject-card" data-subject="Fiqih"><span class="subject-icon religion">☾</span><b>Fikih</b></button>
+   <button class="subject-card" data-subject="Informatika"><span class="subject-icon tech">⌘</span><b>Informatika</b></button>
+  </div>
+ </section>
+ <section class="rg-shortcuts" id="fitur">
+  <a class="shortcut" href="#tka"><span class="shortcut-icon violet">▤</span><span><b>Tryout TKA</b><small>Simulasi sesuai acuan resmi</small></span><i>›</i></a>
+  <a class="shortcut" href="#latihan"><span class="shortcut-icon orange">✎</span><span><b>Latihan soal</b><small>PG dan esai sesuai bab</small></span><i>›</i></a>
+  <a class="shortcut" href="#riwayat"><span class="shortcut-icon green">▥</span><span><b>Rapor belajar</b><small>Nilai dan riwayat latihan</small></span><i>›</i></a>
+  <a class="shortcut" href="#analisis"><span class="shortcut-icon blue">◉</span><span><b>Analisis kemampuan</b><small>Lihat topik yang perlu diasah</small></span><i>›</i></a>
+ </section>
+ <section class="rg-panel tryout-panel" id="tka">
+  <div class="rg-panel-heading"><div><span class="section-eyebrow">PERSIAPAN ASESMEN</span><h2>Tryout TKA kelas IX</h2></div><span class="new-tag">RESMI</span></div>
+  <div class="tka-card">
+   <div class="tka-emblem">TKA</div><div class="tka-copy"><b>Kenali format Tes Kemampuan Akademik</b><p>Latihan Matematika dan Bahasa Indonesia dengan bentuk soal PG, PG kompleks, serta soal berbasis stimulus.</p><div class="tka-actions"><a href="https://pusmendik.kemendikdasmen.go.id/tka/simulasi_tka/" target="_blank" rel="noopener">Buka simulasi Pusmendik ↗</a><a href="https://pusmendik.kemendikdasmen.go.id/tka/kerangka/smp/" target="_blank" rel="noopener">Kisi-kisi & contoh soal ↗</a></div></div>
+  </div>
+ </section>
+ <section class="rg-panel" id="latihan">
+  <div class="rg-panel-heading"><div><span class="section-eyebrow">PERSONAL STUDY SESSION</span><h2>Atur latihanmu</h2><p>Pilih mapel, bab, dan tingkat kesulitan.</p></div><span class="panel-number">01</span></div>
+  <div class="layout">
+   <section class="builder">
+    <div class="heading"><div><span class="eyebrow">01 / MATERI</span><h2>Mau belajar apa?</h2><p>Tentukan kelas dan mata pelajaran.</p></div><span class="step">01</span></div>
+    <div class="fields"><div class="field"><label for="grade">Kelas</label><select id="grade"><option value="VII">Kelas VII</option><option value="VIII">Kelas VIII</option><option value="IX" selected>Kelas IX</option></select></div><div class="field"><label for="subject">Mata pelajaran</label><select id="subject"><option value="">Pilih mata pelajaran</option><option>Al-Qur'an Hadits</option><option>Aqidah Akhlak</option><option>Fiqih</option><option>SKI</option><option>Pendidikan Pancasila</option><option>Bahasa Indonesia</option><option>Bahasa Arab</option><option>Bahasa Inggris</option><option>Matematika</option><option>IPA</option><option>IPS</option><option>Seni Teater</option><option>Penjas Orkes</option><option>Informatika</option><option>Mulok (Riset)</option><option>Coding/AI</option></select></div></div>
+    <div class="heading chapter-heading"><div><span class="eyebrow">02 / TOPIK</span><h2>Pilih bab latihan</h2><p>Pilih satu atau beberapa bab.</p></div><button type="button" id="select-all" class="text-btn">Pilih semua</button></div>
+    <div id="chapter-list" class="chapter-list"><div class="empty-chapters">Pilih mata pelajaran untuk melihat daftar bab.</div></div>
+    <div class="heading setup-heading"><div><span class="eyebrow">03 / PENGATURAN</span><h2>Atur sesi latihan</h2><p>Sesuaikan jumlah soal dan kesulitan.</p></div><span class="step">03</span></div>
+    <div class="fields three"><div class="field"><label for="difficulty">Kesulitan</label><select id="difficulty"><option value="campuran">Campuran</option><option value="mudah">Mudah</option><option value="sedang">Sedang</option><option value="sulit">Sulit</option></select></div><div class="field"><label for="mcq-count">Pilihan ganda</label><select id="mcq-count"><option value="5">5 soal</option><option value="10">10 soal</option><option value="15">15 soal</option><option value="20">20 soal</option><option value="25">25 soal</option><option value="30">30 soal</option><option value="35" selected>35 soal</option><option value="40">40 soal</option><option value="45">45 soal</option><option value="50">50 soal</option></select></div><div class="field"><label for="essay-count">Esai</label><select id="essay-count"><option value="0">Tanpa esai</option><option value="5" selected>5 soal</option><option value="10">10 soal</option><option value="15">15 soal</option><option value="20">20 soal</option><option value="25">25 soal</option></select></div></div>
+    <div class="start-row"><div><small>ESTIMASI WAKTU</small><b id="session-time">60:00 menit</b></div><button id="prepare-session" class="start-btn" disabled>Mulai latihan <span>→</span></button></div><p class="notice" id="session-notice">Pilih mata pelajaran dan minimal satu bab untuk melanjutkan.</p>
+   </section>
+   <aside class="side-info"><div class="tip"><span class="tip-icon">✦</span><span class="eyebrow">STUDY TIP</span><h3>Pelan-pelan, yang penting paham.</h3><p>Kerjakan dengan tenang. Tandai soal yang masih ragu dan pelajari pembahasannya setelah selesai.</p></div><div class="quick"><span class="eyebrow">SESI KAMU</span><div><span>Generator</span><b>AI Haimiya</b></div><div><span>Format</span><b>PG + Esai</b></div></div></aside>
+  </div>
+ </section>
+ <section id="analisis" class="rg-panel below"><div class="rg-panel-heading"><div><span class="section-eyebrow">YOUR PROGRESS</span><h2>Analisis kemampuan</h2></div></div><div class="empty-panel"><b>Analisis akan muncul setelah kamu menyelesaikan latihan.</b><p>Hasil benar, salah, dan pembahasan tersimpan di sini.</p></div></section>
+ <section id="riwayat" class="rg-panel below"><div class="rg-panel-heading"><div><span class="section-eyebrow">STUDY HISTORY</span><h2>Riwayat belajar</h2></div></div><div class="empty-panel"><b>Belum ada sesi latihan.</b><p>Mulai latihan untuk membangun rapor belajarmu.</p></div></section>
+ <div hidden><form id="tutor-form"><input id="tutor-input"><button id="tutor-send"></button></form><div id="tutor-messages"></div></div>
+ <footer class="rg-footer">HAIMIYA LEARNING SPACE <span>·</span> BELAJAR · BERLATIH · BERKEMBANG</footer>
 </main>
+<nav class="rg-bottom"><a class="active" href="#materi"><span>⌂</span>Beranda</a><a href="#pelajaran"><span>▦</span>Pelajaran</a><a href="#tka"><span>♧</span>Tryout</a><a href="#riwayat"><span>•••</span>Lainnya</a></nav>
 <script src="js/latihan.js"></script>
+<script>
+(()=>{const search=document.querySelector("#subject-search"),cards=[...document.querySelectorAll(".subject-card")],select=document.querySelector("#subject");search.addEventListener("input",()=>{const q=search.value.toLowerCase();cards.forEach(c=>c.hidden=!c.textContent.toLowerCase().includes(q))});cards.forEach(c=>c.addEventListener("click",()=>{const name=c.dataset.subject;const option=[...select.options].find(o=>o.text.trim()===name||o.value===name);if(option){select.value=option.value;select.dispatchEvent(new Event("change"));document.querySelector("#latihan").scrollIntoView({behavior:"smooth"})}}));const history=JSON.parse(localStorage.getItem("haimiya-practice-history")||"[]");let total=0,correct=0;history.forEach(x=>{total++;correct+=Number(x.correct||0)});document.querySelector("#daily-total").textContent=total;document.querySelector("#daily-correct").textContent=correct;document.querySelector("#daily-xp").textContent=(correct*5)+" XP";document.querySelector("#xp-count").textContent=correct*5;document.querySelector("#daily-progress").style.width=Math.min(100,correct/60*100)+"%";})();
+</script>
 </body></html>
