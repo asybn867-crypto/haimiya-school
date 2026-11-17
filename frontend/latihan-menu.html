@@ -9,15 +9,14 @@
 </head>
 <body>
 <header class="rg-top">
- <div class="rg-profile"><span class="profile-orb">S</span><span><b id="level-label">Level 1</b><small><i class="xp-dot">XP</i> <strong id="xp-count">0</strong> / <span id="xp-needed">100</span></small></span></div>
+ <div class="rg-profile"><span><b id="level-label">Level 1</b><small><i class="xp-dot">XP</i> <strong id="xp-count">0</strong> / <span id="xp-needed">100</span></small></span></div>
  <div class="rg-top-caption"><b>Ruang Belajar</b><small>Belajar jadi lebih mudah</small></div>
 </header>
 <main class="rg-main" id="materi">
- <div class="rg-search-row"><label class="rg-search"><span>⌕</span><input id="subject-search" type="search" placeholder="Cari mata pelajaran atau latihan..."></label><a class="round-tool" href="/" aria-label="Jadwal sekolah" title="Kembali ke Jadwal">⌂</a><a class="round-tool" href="#riwayat" aria-label="Riwayat">◷</a><a class="round-tool" href="#fitur" aria-label="Fitur">♧</a></div>
+ <div class="rg-search-row"><label class="rg-search"><input id="subject-search" type="search" placeholder="Cari mata pelajaran..."></label></div>
  <div class="rg-grade"><label for="learning-grade">Pilih kelas</label><select id="learning-grade"><option value="">Pilih kelas 1–9</option><option value="I">Kelas 1 SD</option><option value="II">Kelas 2 SD</option><option value="III">Kelas 3 SD</option><option value="IV">Kelas 4 SD</option><option value="V">Kelas 5 SD</option><option value="VI">Kelas 6 SD</option><option value="VII">Kelas 7 SMP</option><option value="VIII">Kelas 8 SMP</option><option value="IX">Kelas 9 SMP</option></select></div>
  <section class="rg-banner">
   <div class="banner-copy"><span class="banner-kicker">HAIMIYA STUDY CHALLENGE</span><h1>Belajar hari ini,<br>lebih siap esok hari.</h1><p>Latihan terarah, tryout, dan evaluasi dalam satu tempat.</p><a href="#latihan" class="banner-cta">Mulai belajar <b>→</b></a></div>
-  <div class="banner-art" aria-hidden="true"><span class="art-sun"></span><span class="art-book">📚</span><span class="art-star">✦</span><span class="art-pencil">✎</span></div>
  </section>
  <section class="rg-progress">
   <div class="progress-top"><div><b>Kamu sedang membangun progres! 🔥</b><small>Capaian belajarmu di Haimiya</small></div><a href="#riwayat">Lihat progres</a></div>
@@ -27,26 +26,20 @@
  <section class="rg-panel" id="pelajaran">
   <div class="rg-panel-heading"><div><span class="section-eyebrow">RUANG BELAJAR</span><h2>Belajar</h2></div><a href="#latihan">Lihat semua</a></div>
   <div class="subject-grid" id="subject-grid">
-   <button class="subject-card" data-subject="Matematika"><span class="subject-icon math">∑</span><b>Matematika</b></button>
-   <button class="subject-card" data-subject="Bahasa Indonesia"><span class="subject-icon indo"><span class="book-symbol">Aa</span></span><b>Bahasa Indonesia</b></button>
-   <button class="subject-card" data-subject="IPA"><span class="subject-icon science">⚗</span><b>IPA</b></button>
-   <button class="subject-card" data-subject="IPS"><span class="subject-icon social">🌏</span><b>IPS</b></button>
-   <button class="subject-card" data-subject="Pendidikan Pancasila"><span class="subject-icon civic">★</span><b>PPKn</b></button>
-   <button class="subject-card" data-subject="Bahasa Inggris"><span class="subject-icon english">A</span><b>Bahasa Inggris</b></button>
-   <button class="subject-card" data-subject="Fiqih"><span class="subject-icon religion">☾</span><b>Fikih</b></button>
-   <button class="subject-card more-subjects" id="show-all-subjects" type="button"><span class="subject-icon tech">＋</span><b>Lihat selengkapnya</b></button>
+   <button class="subject-card" data-subject="Matematika"><b>Matematika</b></button>
+   <button class="subject-card" data-subject="Bahasa Indonesia"><b>Bahasa Indonesia</b></button>
+   <button class="subject-card" data-subject="IPA"><b>IPA</b></button>
+   <button class="subject-card" data-subject="IPS"><b>IPS</b></button>
+   <button class="subject-card" data-subject="Pendidikan Pancasila"><b>PPKn</b></button>
+   <button class="subject-card" data-subject="Bahasa Inggris"><b>Bahasa Inggris</b></button>
+   <button class="subject-card" data-subject="Fiqih"><b>Fikih</b></button>
+   <button class="subject-card more-subjects" id="show-all-subjects" type="button"><b>Lihat selengkapnya</b></button>
   </div>
   <div id="subject-detail" class="subject-detail" hidden></div>
  </section>
- <section class="rg-shortcuts" id="fitur" hidden>
-  <a class="shortcut" href="#tka"><span class="shortcut-icon violet">▤</span><span><b>Tryout TKA</b><small>Simulasi sesuai acuan resmi</small></span><i>›</i></a>
-  <a class="shortcut" href="#latihan"><span class="shortcut-icon orange">✎</span><span><b>Latihan soal</b><small>PG dan esai sesuai bab</small></span><i>›</i></a>
-  <a class="shortcut" href="#riwayat"><span class="shortcut-icon green">▥</span><span><b>Rapor belajar</b><small>Nilai dan riwayat latihan</small></span><i>›</i></a>
-  <a class="shortcut" href="#analisis"><span class="shortcut-icon blue">◉</span><span><b>Analisis kemampuan</b><small>Lihat topik yang perlu diasah</small></span><i>›</i></a>
- </section>
  <section class="rg-panel tryout-panel" id="tka">
   <div class="rg-panel-heading"><div><span class="section-eyebrow">PERSIAPAN ASESMEN</span><h2>Tryout TKA</h2><p>Pilih kelas dan mata pelajaran untuk memulai simulasi.</p></div><span class="new-tag">TKA</span></div>
-  <div class="tka-card"><div class="tka-emblem">TKA</div><div class="tka-copy"><b>Rancang tryout TKA</b>
+  <div class="tka-card"><div class="tka-copy"><b>Rancang tryout TKA</b>
    <div class="tka-fields"><label>Kelas<select id="tka-grade"><option value="VI">Kelas 6 SD</option><option value="IX">Kelas 9 SMP</option><option value="XII">Kelas 12 SMA</option></select></label><label>Mata pelajaran<select id="tka-subject"><option value="Matematika">Matematika</option><option value="Bahasa Indonesia">Bahasa Indonesia</option></select></label><label>Jumlah soal<select id="tka-count"><option value="20">20 soal</option><option value="30">30 soal</option><option value="40">40 soal</option><option value="50">50 soal</option></select></label><button type="button" id="start-tka" class="start-btn">Gunakan pilihan →</button></div><p id="tka-notice" class="notice"></p>
   </div></div>
  </section>
@@ -71,10 +64,10 @@
  <section id="lainnya" class="rg-panel settings-panel" hidden>
  <div class="settings-profile"><div class="settings-avatar">S</div><h2 id="settings-name">Siswa Haimiya</h2><button type="button" id="profile-detail">Detail Profil</button></div>
  <div class="settings-list">
- <button type="button" class="settings-item" data-setting="Downloads"><span>⇩</span>Downloads<b>›</b></button><button type="button" class="settings-item" data-setting="Daftar Screenshot"><span>▣</span>Daftar Screenshot<b>›</b></button><button type="button" class="settings-item" data-setting="Widget Ruangguru"><span>◈</span>Widget Ruangguru<b>›</b></button><button type="button" class="settings-item" data-setting="Paket Saya"><span>▤</span>Paket Saya<b>›</b></button><button type="button" class="settings-item" data-setting="Ruangguru Live!"><span>◉</span>Ruangguru Live!<b>›</b></button><button type="button" class="settings-item" data-setting="Hadiah"><span>♧</span>Hadiah<b>›</b></button><button type="button" class="settings-item" data-setting="Pengaturan"><span>⚙</span>Pengaturan<b>›</b></button><button type="button" class="settings-item" data-setting="Bantuan"><span>?</span>Bantuan<b>›</b></button><button type="button" class="settings-item" data-setting="Hubungi Kami"><span>☏</span>Hubungi Kami<b>›</b></button><button type="button" class="settings-item" data-setting="Tentang Kami"><span>ⓘ</span>Tentang Kami<b>›</b></button><button type="button" class="settings-item" data-setting="Kontrol Orang Tua"><span>♙</span>Kontrol Orang Tua<b>›</b></button><button type="button" class="settings-item" data-setting="Mitra Ruangguru"><span>♧</span>Mitra Ruangguru<b>›</b></button><button type="button" class="settings-item" data-setting="Kebijakan Privasi"><span>▧</span>Kebijakan Privasi<b>›</b></button><button type="button" class="settings-item" data-setting="Syarat dan Ketentuan"><span>▧</span>Syarat dan Ketentuan<b>›</b></button>
+ <button type="button" class="settings-item" data-setting="Profil siswa">Profil siswa<b>›</b></button><button type="button" class="settings-item" data-setting="Preferensi belajar">Preferensi belajar<b>›</b></button><button type="button" class="settings-item" data-setting="Pengaturan tampilan">Pengaturan tampilan<b>›</b></button><button type="button" class="settings-item" data-setting="Riwayat belajar">Riwayat belajar<b>›</b></button><button type="button" class="settings-item" data-setting="Bantuan">Bantuan<b>›</b></button><button type="button" class="settings-item" data-setting="Hubungi Kami">Hubungi Kami<b>›</b></button><button type="button" class="settings-item" data-setting="Tentang Haimiya">Tentang Haimiya<b>›</b></button><button type="button" class="settings-item" data-setting="Kebijakan Privasi">Kebijakan Privasi<b>›</b></button><button type="button" class="settings-item" data-setting="Syarat dan Ketentuan">Syarat dan Ketentuan<b>›</b></button>
  </div><button type="button" id="settings-logout" class="settings-logout">↪ Keluar</button><div id="settings-detail" class="settings-detail" hidden></div>
 </section>
-<footer class="rg-footer">HAIMIYA LEARNING SPACE <span>·</span> BELAJAR · BERLATIH · BERKEMBANG</footer>
+
 </main>
 <nav class="rg-bottom"><a class="active" href="#materi" data-nav="home"><span>⌂</span>Beranda</a><a href="#pelajaran" data-nav="lesson"><span>▦</span>Pelajaran</a><a href="#tka" data-nav="tryout"><span>♧</span>Tryout</a><a href="#lainnya" data-nav="more"><span>•••</span>Lainnya</a></nav>
 <script src="js/latihan.js"></script>
