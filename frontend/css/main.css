@@ -405,3 +405,51 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
 .ai-message.user .ai-message-bubble{background:#65452f!important;border-color:#876348!important;color:#fff!important}
 .ai-message.bot .ai-message-bubble{border-color:#554536!important}
 .ai-attach{background:#40362f!important;color:#e6d6c6!important}
+
+
+/* Remove remaining dark theme surfaces across every page */
+:root{color-scheme:light!important;--paper:#f7f2eb!important;--surface:#fffdf9!important;--ink:#342a25!important;--muted:#827469!important;--line:#e7ddd2!important;--brown:#65452f!important;--brown2:#876348!important;--orange:#c8793e!important;--orange-soft:#f8ecdf!important;--shadow:0 12px 28px #50372512!important}
+html,body{background:transparent!important;color:#342a25!important}
+.sidebar,.topbar,.panel,.rail-card,.rail-note,.balance,.balance-redesign,.study-card,.study-main-stat,.study-progress-box,.calendar-panel,.task-composer,.task-card,.data-item,.saving-stats>div,.ai-card,.music-card{background:#fffdf9!important;border-color:#e7ddd2!important;color:#342a25!important;box-shadow:0 10px 26px #50372510!important}
+.brand,.topbar h1,.section-head h2,.study-section-head h3,.study-heading h2,.panel h2,.panel h3,.music-card h3,.ai-profile h3{color:#49372b!important}
+.brand small,.sidebar-bottom,.clock small,.timezone,.lesson-time,.lesson-teacher,.admin-link,.eyebrow,.task-count,.task-hint{color:#827469!important}
+#nav .nav-link,.nav-link{background:transparent!important;color:#65452f!important;border-color:transparent!important}
+#nav .nav-link.active,.nav-link.active{background:#eadfd2!important;border-color:#d8c6b5!important;color:#503725!important;box-shadow:none!important}
+#nav .nav-link:hover,.nav-link:hover{background:#f2e9df!important;color:#503725!important}
+.hero,.balance-redesign,.study-card{background:linear-gradient(115deg,#503725,#79583f)!important;color:#fff!important}
+.day-tab,.lesson,#view-schedule .day-tab,#view-schedule .lesson{background:#fffdf9!important;border-color:#e7ddd2!important;color:#49372b!important;box-shadow:0 7px 20px #5037250c!important}
+.day-tab.active,#view-schedule .day-tab.active{background:#65452f!important;border-color:#65452f!important;color:#fff!important}
+.lesson.active,#view-schedule .lesson.active{background:#fff0df!important;border-color:#d99a68!important;color:#49372b!important}
+.lesson.break,#view-schedule .lesson.break{background:#f4eee7!important;color:#665548!important}
+.lesson-tag,#view-schedule .lesson-tag{background:#eee5dc!important;color:#65452f!important}
+.lesson.active .lesson-tag,#view-schedule .lesson.active .lesson-tag{background:#c8793e!important;color:#fff!important}
+.panel input,.panel select,.panel textarea,.task-form input,.task-field input,.task-field select,.task-field textarea,#task-form input{background:#fffdf9!important;border-color:#d8c6b5!important;color:#342a25!important;caret-color:#65452f!important}
+.panel input::placeholder,.panel textarea::placeholder,.task-field input::placeholder,.task-field textarea::placeholder{color:#9a8b7e!important}
+.primary,.ai-card #chat-form button,.ai-send,.ai-chat-composer .ai-send,.ai-page-header .ai-new-chat{background:#65452f!important;border-color:#65452f!important;color:#fff!important}
+.secondary,.task-tools button,.music-mark,.calendar-toolbar button{background:#eee5dc!important;border-color:#e0d2c4!important;color:#65452f!important}
+.calendar-day{background:#faf7f2!important;color:#49372b!important;border-color:#e7ddd2!important}
+.calendar-day.is-selected{background:#65452f!important;border-color:#65452f!important;color:#fff!important}
+.calendar-detail{background:#f7f2eb!important;border-color:#e7ddd2!important;color:#665548!important}
+.task-filters button{background:#fffdf9!important;color:#827469!important;border-color:#e7ddd2!important}
+.task-filters button.active,.task-check input:checked+.task-checkmark{background:#65452f!important;border-color:#65452f!important;color:#fff!important}
+.task-status,.task-status.done{background:#edf3ec!important;color:#527454!important}
+.task-status.active{background:#f5eee5!important;color:#805b3d!important}
+.task-status.expired,.task-tools button:last-child{background:#f4e8df!important;color:#8d5140!important}
+.ai-card,.music-card{background:rgba(255,253,249,.96)!important;border-color:#e7d9ca!important;color:#342a25!important}
+.ai-card .ai-welcome,.ai-card .bubble,.ai-card .ai-suggestions button{background:#fff!important;border-color:#e7d9ca!important;color:#59483b!important}
+.ai-card .bubble.user{background:#eee2d5!important;color:#503725!important}
+.ai-card #chat-form,.ai-chat-composer form{background:#fffdf9!important;border-color:#d8c6b5!important}
+.ai-card #chat-input,.ai-chat-composer input{background:transparent!important;color:#342a25!important}
+.ai-page-shell{background:#fffdf9!important;border-color:#e7ddd2!important;box-shadow:0 16px 40px #50372512!important}
+.ai-page-header{background:#f7f2eb!important;border-color:#e7ddd2!important;color:#342a25!important}
+.ai-page-header small,.ai-page-identity small,.ai-chat-composer>small{color:#827469!important}
+.ai-hero{background:linear-gradient(115deg,#503725,#79583f)!important;border-color:#876348!important}
+.ai-hero h2{color:#fff!important}
+.ai-kicker,.ai-hero-copy p,.ai-hero-note{color:#f0dfce!important}
+.ai-chat-area{background:#fffdf9!important}
+.ai-message-bubble,.ai-message.bot .ai-message-bubble{background:#f7f2eb!important;border-color:#e7ddd2!important;color:#49372b!important}
+.ai-message.user .ai-message-bubble{background:#65452f!important;border-color:#876348!important;color:#fff!important}
+.ai-chat-composer{background:linear-gradient(180deg,#fffdf900,#fffdf9 25%)!important}
+.ai-attach{background:#eee5dc!important;color:#65452f!important}
+.progress-track{background:#eee5dc!important}
+.study-progress-box .progress-track i{background:linear-gradient(90deg,#a66a3e,#e1a36d)!important}
