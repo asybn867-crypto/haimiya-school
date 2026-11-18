@@ -453,3 +453,20 @@ html,body{background:transparent!important;color:#342a25!important}
 .ai-attach{background:#eee5dc!important;color:#65452f!important}
 .progress-track{background:#eee5dc!important}
 .study-progress-box .progress-track i{background:linear-gradient(90deg,#a66a3e,#e1a36d)!important}
+
+/* Remove leftover dark surfaces from the AI page */
+.ai-page-shell{background:#fffdf9!important;border-color:#e7ddd2!important;box-shadow:0 12px 28px #50372512!important;color:#342a25!important}
+.ai-page-header{background:#fffdf9!important;border-color:#e7ddd2!important}
+.ai-page-identity strong,.ai-hero h2{color:#49372b!important}
+.ai-page-identity small,.ai-hero-note{color:#827469!important}
+.ai-hero{background:linear-gradient(115deg,#f2e8dc,#e7d6c3)!important;border-color:#e0d0bf!important}
+.ai-kicker,.ai-hero-copy p{color:#876348!important}
+.ai-chat-area{background:#fffdf9!important}
+.ai-message-bubble{background:#f3ece4!important;border-color:#e7ddd2!important;color:#49372b!important}
+.ai-message.user .ai-message-bubble{background:#65452f!important;border-color:#876348!important;color:#fff!important}
+.ai-chat-composer{background:#fffdf9!important}
+.ai-chat-composer form{background:#fff!important;border-color:#d8c6b5!important;box-shadow:0 6px 18px #50372510!important}
+.ai-chat-composer input{color:#342a25!important}
+.ai-chat-composer input::placeholder{color:#9a8b7e!important}
+.ai-attach{background:#eee5dc!important;color:#65452f!important}
+.ai-send{background:#65452f!important;color:#fff!important}
