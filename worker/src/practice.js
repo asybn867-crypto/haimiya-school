@@ -106,6 +106,6 @@ export async function dailyPracticeStatus(env){
   const stage=await env.STORE.get('practice:daily:stage:v1:'+await hash(s.name),'json');
   subjects.push({subject:s.name,published:!!pack,count:pack?.questions?.length||0,building:stage?.questions?.length||0,target:250,generatedAt:pack?.generatedAt||null});
  }
- const usage=await env.STORE.get('practice:daily:status','json');
- return json({targetPerSubject:250,targetTotal:4000,subjects,lastBatch:await env.STORE.get('practice:daily:status','json'),aiUsage:usage});
+ const lastBatch=await env.STORE.get('practice:daily:status','json');
+ return json({targetPerSubject:250,targetTotal:4000,subjects,lastBatch,aiUsage:usage});
 }
