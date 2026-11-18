@@ -13,3 +13,54 @@
 .bottom-nav button,.bottom-nav button.active{background:transparent;font-weight:400;color:#526078}
 .bottom-nav button.active{color:#d85f56}
 .nav-symbol{font-weight:400}
+
+/* Pelajaran page refresh */
+.subjects-intro{position:relative;display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:190px;padding:30px 34px;margin:4px 0 30px;overflow:hidden;border:1px solid #f2ddd7;border-radius:26px;background:linear-gradient(112deg,#fff0eb 0%,#fff8f3 58%,#f0efff 100%);box-shadow:var(--shadow)}
+.subjects-intro:after{content:"";position:absolute;width:260px;height:260px;right:90px;top:-175px;border:1px solid #fff9;border-radius:50%;box-shadow:0 0 0 25px #ffffff20,0 0 0 50px #ffffff18}
+.subjects-intro-copy{position:relative;z-index:1;max-width:590px}
+.subjects-kicker{font-size:9px;font-weight:900;letter-spacing:2px;color:#d77c70}
+.subjects-intro h2{margin:9px 0 8px;font:900 clamp(25px,4vw,35px)/1.15 Nunito,sans-serif;letter-spacing:-1px;color:#303950}
+.subjects-intro p{max-width:490px;margin:0;color:#778196;font-size:13px;line-height:1.7}
+.subjects-intro-art{position:relative;z-index:1;display:grid;place-items:center;width:112px;height:112px;flex:none;border:1px solid #ffffffd9;border-radius:32px;background:linear-gradient(145deg,#fff,#f8e9e5);box-shadow:0 14px 28px #9b6e6420,inset 0 2px 4px #fff}
+.subjects-intro-art b{font:900 37px Nunito;color:#e8796c;letter-spacing:-2px}
+.subjects-intro-art span,.subjects-intro-art i{position:absolute;color:#e5aa63;font-style:normal}
+.subjects-intro-art span{top:12px;left:15px;font-size:17px}
+.subjects-intro-art i{right:13px;bottom:10px;font-size:20px}
+.subjects-toolbar{display:flex;align-items:end;justify-content:space-between;gap:18px;margin:0 0 17px}
+.subjects-toolbar h2,.chapter-toolbar h2{margin:4px 0 3px;font:900 22px Nunito,sans-serif;letter-spacing:-.5px}
+.subjects-toolbar small{color:var(--muted);font-size:11px;font-weight:700}
+.subject-search-wrap{position:relative;display:block;width:min(100%,330px)}
+.subject-search-wrap>span{position:absolute;left:14px;top:50%;transform:translateY(-54%);font-size:22px;color:#9aa4b5;pointer-events:none}
+.subject-search-wrap .search-box{width:100%;height:44px;padding:0 14px 0 42px;border-color:#e8eaf1;border-radius:14px;box-shadow:0 5px 15px #38486b08}
+#subject-results .subject-grid{gap:13px}
+#subject-results .subject-card{position:relative;min-height:150px;padding:17px;border-color:#e9edf4;border-radius:19px;box-shadow:0 7px 20px #38486b0a;transition:transform .2s,border-color .2s,box-shadow .2s}
+#subject-results .subject-card:after{content:"Buka materi  →";font-size:10px;font-weight:900;color:#a0a9b8;letter-spacing:.1px}
+#subject-results .subject-card:hover{transform:translateY(-4px);border-color:#efb6ae;box-shadow:0 14px 26px #38486b12}
+#subject-results .subject-card b{font-size:13px;line-height:1.4;color:#303950}
+#subject-results .subject-icon{width:46px;height:44px;border-radius:14px;font-size:19px}
+.subject-detail-hero{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:24px 27px;margin:0 0 27px;border:1px solid #f0e1db;border-radius:22px;background:linear-gradient(110deg,#fff2ed,#fffaf6 68%,#f2f1ff)}
+.subject-detail-hero h2{margin:6px 0 5px;font:900 clamp(22px,3vw,29px) Nunito,sans-serif;letter-spacing:-.7px;color:#303950}
+.subject-detail-hero p{margin:0;max-width:560px;color:#7c8799;font-size:12px;line-height:1.65}
+.subject-detail-mark{display:grid;place-items:center;width:65px;height:65px;flex:none;border-radius:20px;background:#fff;color:#e4776a;font:900 25px Nunito;box-shadow:0 8px 20px #8b63501c}
+.chapter-toolbar{display:flex;align-items:end;justify-content:space-between;gap:12px;margin:0 0 15px}
+.chapter-toolbar .button-quiet{padding:9px 12px;font-size:11px;white-space:nowrap}
+.chapter-list{gap:11px}
+.chapter-card{border-color:#e8ebf2;border-radius:17px;box-shadow:0 6px 18px #33415f08;transition:border-color .2s,box-shadow .2s}
+.chapter-card:has(.subtopic-list:not(.hidden)){border-color:#f0c3bb;box-shadow:0 10px 24px #a56c5c10}
+.chapter-head{padding:16px 18px;gap:13px}
+.chapter-number{display:grid;place-items:center;width:39px;height:39px;flex:none;border-radius:12px;background:#fff0ed;color:#df766a;font:900 12px Nunito}
+.chapter-title-wrap{min-width:0;flex:1}
+.chapter-title-wrap strong{display:block;color:#303950;font:900 14px/1.4 Nunito,sans-serif}
+.chapter-title-wrap small{color:#929bad;font-size:10px;font-weight:700}
+.chapter-toggle{width:30px;height:30px;border-radius:10px;background:#f3f5fa;color:#7a879c;font-weight:800;transition:transform .2s,background .2s}
+.chapter-card:has(.subtopic-list:not(.hidden)) .chapter-toggle{transform:rotate(45deg);background:#fff0ed;color:#df766a}
+.subtopic-list{gap:7px;padding:0 17px 15px 70px}
+.subtopic{justify-content:flex-start;padding:11px 12px;border-color:#edf0f5;border-radius:11px;background:#fbfcfe;transition:background .18s,border-color .18s,transform .18s}
+.subtopic:hover{transform:translateX(2px);background:#fff7f5;border-color:#efc3bc}
+.subtopic-number{width:24px;flex:none;color:#a2aaba;font:800 10px 'Nunito Sans'}
+.subtopic-name{flex:1;color:#566177;font-size:12px;line-height:1.45}
+.subtopic-arrow{color:#e8796d;font-size:15px;font-weight:900}
+.chapter-status{display:flex;align-items:center;gap:8px;margin:14px 2px 0;color:#929bad;font-size:10px}
+.status-dot{width:6px;height:6px;flex:none;border-radius:50%;background:#69b69b;box-shadow:0 0 0 3px #69b69b20}
+@media(max-width:760px){.subjects-intro{min-height:160px;padding:23px 20px;margin-bottom:24px}.subjects-intro-art{width:82px;height:82px;border-radius:24px}.subjects-intro-art b{font-size:29px}.subjects-toolbar{align-items:stretch;flex-direction:column}.subject-search-wrap{width:100%}.subject-detail-hero{padding:20px;align-items:flex-start}.subject-detail-mark{width:52px;height:52px;border-radius:16px;font-size:20px}.chapter-toolbar{align-items:flex-start}.subtopic-list{padding-left:17px}}
+@media(max-width:400px){.subjects-intro-art{width:66px;height:66px}.subjects-intro-art b{font-size:24px}.subjects-intro{gap:10px}.chapter-toolbar{flex-direction:column}.chapter-toolbar .button-quiet{align-self:flex-start}}
