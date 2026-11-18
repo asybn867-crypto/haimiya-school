@@ -16,18 +16,17 @@ export async function findVideos(req,env){
  let b;try{b=await req.json()}catch{return json({error:'Data tidak valid.'},400)}
  const subject=String(b.subject||'').trim().slice(0,60),chapter=String(b.chapter||'').trim().slice(0,120),topic=String(b.topic||'').trim().slice(0,120);
  if(!subject||!topic)return json({error:'Topik video belum lengkap.'},400);
- const q='site:youtube.com/watch OR site:youtu.be '+subject+' kelas 9 '+chapter+' '+topic+' penjelasan materi';
+ const q='site:youtube.com/watch OR site:youtube.com/playlist "'+topic+'" "'+subject+'" kelas 9 pembelajaran materi';
  const results=await refs(q);
  const videos=results.filter(x=>{
   try{
    const u=new URL(x.url),host=u.hostname.replace(/^www\\./,'');
-   const id=host==='youtu.be'?u.pathname.split('/').filter(Boolean)[0]:host==='youtube.com'&&u.pathname==='/watch'?u.searchParams.get('v'):'';
-   return /^[\\w-]{11}$/.test(id||'');
+   if(host!=='youtube.com'&&host!=='youtu.be')return false;
+   if(u.pathname==='/watch')return /^[\\w-]{11}$/.test(u.searchParams.get('v')||'');
+   if(u.pathname==='/playlist')return /^PL[\\w-]{10,}$/.test(u.searchParams.get('list')||'');
+   if(host==='youtu.be')return /^[\\w-]{11}$/.test(u.pathname.split('/').filter(Boolean)[0]||'');
+   return false;
   }catch{return false}
- }).map(x=>{
-  const u=new URL(x.url),host=u.hostname.replace(/^www\\./,'');
-  const id=host==='youtu.be'?u.pathname.split('/').filter(Boolean)[0]:u.searchParams.get('v');
-  return {...x,url:'https://www.youtube.com/watch?v='+id};
- }).slice(0,3);
+ }).map(x=>({...x,url:new URL(x.url).href})).slice(0,5);
  return json({videos});
 }
