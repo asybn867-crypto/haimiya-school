@@ -505,3 +505,6 @@ html,body{background:transparent!important;color:#342a25!important}
 #view-schedule .lesson{background:rgba(255,253,251,.72)!important}
 #view-schedule .lesson.break{background:rgba(248,242,239,.78)!important}
 #view-schedule .lesson.active{background:rgba(255,240,223,.82)!important}
+
+/* Spotify embed: subtle border and keep it within the music card */
+.music-card iframe{width:100%;max-width:100%;min-width:0;margin-left:0;border:1px solid #e3d6ca;border-radius:12px}
