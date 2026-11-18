@@ -7,3 +7,9 @@
 @media(max-width:400px){.hero-art{display:none}.quick-stats{grid-template-columns:1fr 1fr}.stat-card:nth-child(3){grid-column:1/-1}.profile-hero{flex-wrap:wrap}.profile-level{margin-left:auto}.profile-actions{grid-template-columns:1fr}}
 
 .in-quiz .bottom-nav{display:none}
+
+/* Bottom navigation: transparent, readable, and lighter typography */
+.bottom-nav{background:rgba(255,255,255,.28);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-color:rgba(105,119,145,.22);box-shadow:0 8px 28px rgba(40,54,80,.10)}
+.bottom-nav button,.bottom-nav button.active{background:transparent;font-weight:600;color:#526078}
+.bottom-nav button.active{color:#d85f56}
+.nav-symbol{font-weight:700}
