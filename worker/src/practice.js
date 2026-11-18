@@ -18,6 +18,16 @@ export async function findVideos(req,env){
  if(!subject||!topic)return json({error:'Topik video belum lengkap.'},400);
  const q='site:youtube.com/watch OR site:youtu.be '+subject+' kelas 9 '+chapter+' '+topic+' penjelasan materi';
  const results=await refs(q);
- const videos=results.filter(x=>/^https?:\/\/(www\.)?(youtube\.com\/watch|youtu\.be\/)/i.test(x.url)).slice(0,3);
+ const videos=results.filter(x=>{
+  try{
+   const u=new URL(x.url),host=u.hostname.replace(/^www\\./,'');
+   const id=host==='youtu.be'?u.pathname.split('/').filter(Boolean)[0]:host==='youtube.com'&&u.pathname==='/watch'?u.searchParams.get('v'):'';
+   return /^[\\w-]{11}$/.test(id||'');
+  }catch{return false}
+ }).map(x=>{
+  const u=new URL(x.url),host=u.hostname.replace(/^www\\./,'');
+  const id=host==='youtu.be'?u.pathname.split('/').filter(Boolean)[0]:u.searchParams.get('v');
+  return {...x,url:'https://www.youtube.com/watch?v='+id};
+ }).slice(0,3);
  return json({videos});
 }
