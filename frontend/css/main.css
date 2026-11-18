@@ -470,3 +470,11 @@ html,body{background:transparent!important;color:#342a25!important}
 .ai-chat-composer input::placeholder{color:#9a8b7e!important}
 .ai-attach{background:#eee5dc!important;color:#65452f!important}
 .ai-send{background:#65452f!important;color:#fff!important}
+
+/* Jadwal sekolah: transparent surfaces, readable regular-weight text */
+#nav .nav-link,#nav .nav-link.active{background:transparent!important;font-weight:500!important;color:#665548!important;box-shadow:none!important}
+#nav .nav-link.active{color:#49372b!important}
+#view-schedule .lesson,#view-schedule .lesson.break{background:transparent!important;border-color:rgba(101,69,47,.18)!important;box-shadow:none!important}
+#view-schedule .lesson.active{background:rgba(237,145,72,.12)!important;border-color:rgba(217,154,104,.45)!important;box-shadow:none!important}
+#view-schedule .lesson-name{font-weight:500!important;color:#49372b!important}
+#view-schedule .lesson-time,#view-schedule .lesson-teacher{color:#75675b!important}
