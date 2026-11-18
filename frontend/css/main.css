@@ -362,3 +362,5 @@ body::before{background:linear-gradient(115deg,rgba(248,242,239,.48),rgba(248,24
  #nav .nav-link,#nav .nav-link:link,#nav .nav-link:visited{display:inline-flex;flex:0 0 auto;width:auto;min-height:42px;padding:10px 12px;font-size:13px}
  #nav .nav-link span{display:inline!important}
 }
+
+.rail-widget-hidden{display:none!important}
