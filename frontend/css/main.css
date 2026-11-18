@@ -364,3 +364,44 @@ body::before{background:linear-gradient(115deg,rgba(248,242,239,.48),rgba(248,24
 }
 
 .rail-widget-hidden{display:none!important}
+
+
+/* Global Haimiya palette: ivory, warm brown, and muted orange */
+:root{--paper:#f7f2eb;--surface:#fffdf9;--ink:#342a25;--muted:#827469;--line:#e7ddd2;--brown:#65452f;--brown2:#876348;--orange:#c8793e;--orange-soft:#f8ecdf}
+.nav-link.active,#nav .nav-link.active,.study-date-chip,.study-card,.balance-redesign{background:#eadfd2!important;border-color:#d8c6b5!important;color:#65452f!important;box-shadow:none}
+.nav-link.active,#nav .nav-link.active{color:#65452f!important}
+.hero,.balance-redesign,.study-card{background:linear-gradient(115deg,#503725,#79583f)!important;color:#fff!important}
+.primary,.secondary,.day-tab.active,.task-filters button.active,.calendar-day.is-selected,.task-check input:checked+.task-checkmark,.ai-page-header .ai-new-chat,.ai-send,.ai-chat-composer .ai-send{background:#65452f!important;border-color:#65452f!important;color:#fff!important}
+.secondary{background:#eee5dc!important;color:#65452f!important}
+.rail-note{background:rgba(239,230,219,.94)!important;border-color:#e2d3c3!important;color:#49372b!important}
+.rail-note p{color:#665548!important}
+.ai-card,.music-card{border-color:#e7d9ca!important}
+.ai-card{background:rgba(255,253,249,.94)!important}
+.ai-card .ai-welcome,.ai-card .bubble,.ai-card .ai-suggestions button{background:#fffdf9!important;border-color:#e7d9ca!important;color:#59483b!important}
+.ai-card .bubble.user{background:#eee2d5!important;border-color:#dfcbbb!important;color:#503725!important}
+.ai-card #chat-form{border-color:#d8c6b5!important}
+.ai-card #chat-form button,.ai-page-header .ai-new-chat{background:#65452f!important;color:#fff!important}
+.ai-avatar{background:linear-gradient(145deg,#f4e6d7,#dfc7ad)!important;color:#65452f!important}
+.ai-spark,.rail-note span,.balance-icon{color:#c8793e!important}
+.day-tab,.task-filters button,.calendar-toolbar button{border-color:#e7ddd2!important}
+.lesson-tag,.task-tools button,.calendar-detail,.secondary,.music-mark{background:#eee5dc!important;color:#65452f!important}
+.lesson.active{background:#fff0df!important;border-color:#d99a68!important}
+.lesson.active .lesson-tag{background:#c8793e!important;color:#fff!important}
+.calendar-day.is-today{border-color:#9a6b48!important;background:#f6eadd!important}
+.calendar-day.is-holiday:not(.is-selected),.task-status.expired,.task-tools button:last-child{background:#f4e8df!important;color:#8d5140!important}
+.calendar-day.is-leave:not(.is-selected){background:#eee5dc!important;color:#65452f!important}
+.legend-leave{background:#a17c62!important}
+.study-stat-icon{background:#f4e8dc!important}
+.study-progress-head strong,.study-progress-box .progress-track i{color:#a45d2b!important}
+.study-progress-box .progress-track i{background:linear-gradient(90deg,#a66a3e,#e1a36d)!important}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline-color:#c8793e!important}
+.brand-mark{background:linear-gradient(145deg,#876348,#503725)!important;box-shadow:0 7px 18px #50372525!important}
+.brand-mark:after{color:#c8793e!important}
+#nav .nav-link:hover{background:#f2e9df!important;color:#503725!important;border-color:#e7d9ca!important}
+.ai-page-shell{border-color:#554536!important}
+.ai-page-header{border-color:#554536!important}
+.ai-hero{background:radial-gradient(circle at 75% 45%,#765b45 0,#493a30 38%,#171e38 78%)!important;border-color:#876348!important}
+.ai-kicker,.ai-hero-copy p{color:#e0b98f!important}
+.ai-message.user .ai-message-bubble{background:#65452f!important;border-color:#876348!important;color:#fff!important}
+.ai-message.bot .ai-message-bubble{border-color:#554536!important}
+.ai-attach{background:#40362f!important;color:#e6d6c6!important}
