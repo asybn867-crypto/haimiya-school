@@ -11,3 +11,14 @@ binding = "AI"
 [[kv_namespaces]]
 binding = "STORE"
 id = "1668f729786844d29e8f8362b69e4163"
+
+[[durable_objects.bindings]]
+name = "AI_USAGE"
+class_name = "AIUsageGuard"
+
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["AIUsageGuard"]
+
+[triggers]
+crons = ["*/3 * * * *"]
