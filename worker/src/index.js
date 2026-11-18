@@ -20,6 +20,6 @@ if(u.pathname==='/api/practice/videos'&&req.method==='POST'){const r=await findV
 if(u.pathname==='/api/practice/chapters'&&req.method==='POST'){const r=await listChapters(req,env);return new Response(r.body,{status:r.status,headers:{...base,...cors(origin,env)}})}
 if(u.pathname==='/api/practice/generate'&&req.method==='POST'){const r=await generatePractice(req,env,ctx);return new Response(r.body,{status:r.status,headers:{...base,...cors(origin,env)}})}
 if(u.pathname==='/api/practice/submit'&&req.method==='POST'){const r=await submitPractice(req,env);return new Response(r.body,{status:r.status,headers:{...base,...cors(origin,env)}})}
-if(['/api/admin/login','/api/admin/session','/api/admin/logout','/api/ai','/api/practice/chapters','/api/practice/videos','/api/practice/generate','/api/practice/submit','/api/practice/daily-status'].includes(u.pathname))return json({error:'Method not allowed.'},405,origin,env,{'Allow':u.pathname.endsWith('/session')?'GET, OPTIONS':'POST, OPTIONS'});
+if(['/api/admin/login','/api/admin/session','/api/admin/logout','/api/ai','/api/practice/chapters','/api/practice/videos','/api/practice/generate','/api/practice/submit','/api/practice/daily-status'].includes(u.pathname))return json({error:'Method not allowed.'},405,origin,env,{'Allow':u.pathname.endsWith('/session')||u.pathname.endsWith('/daily-status')?'GET, OPTIONS':'POST, OPTIONS'});
 return json({error:'Not found.'},404,origin,env)
 }catch(e){console.error('Worker request failed:',e?.message||e);return json({error:'Internal server error.'},500,origin,env)}}};
