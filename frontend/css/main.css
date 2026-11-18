@@ -486,3 +486,12 @@ html,body{background:transparent!important;color:#342a25!important}
 #view-schedule .lesson-name{font-weight:500!important;color:#49372b!important}
 #view-schedule .lesson-time,#view-schedule .lesson-teacher{font-weight:400!important;color:#75675b!important}
 #view-schedule .lesson-tag{font-weight:500!important}
+
+
+/* Requested: left navbar and the "Pelajaran" heading above the weekday only */
+#nav .nav-link,#nav .nav-link:link,#nav .nav-link:visited,#nav .nav-link.active,#nav .nav-link:hover,#nav .nav-link:focus{background:transparent!important;border-color:transparent!important;box-shadow:none!important;font-weight:500!important}
+#nav .nav-link{color:#665548!important}
+#nav .nav-link.active,#nav .nav-link:hover{color:#49372b!important}
+#nav .nav-link span{font-weight:500!important}
+# greeting{}
+#greeting{font-weight:500!important}
