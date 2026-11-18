@@ -476,6 +476,6 @@ html,body{background:transparent!important;color:#342a25!important}
 #nav .nav-link,#nav .nav-link.active{font-weight:400!important;color:#665548!important}
 #nav .nav-link:hover,#nav .nav-link.active{color:#49372b!important;transform:none!important}
 
-/* Spotify: reduce the thick white frame around the embed */
-.music-card{padding:8px!important;background:transparent!important;border:1px solid rgba(101,69,47,.12)!important;box-shadow:none!important}
-.music-card iframe{border-radius:10px}
+/* Spotify: remove the thick white container around the player */
+.music-card{padding:0!important;background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important;overflow:visible!important}
+.music-card iframe{display:block!important;width:100%!important;max-width:100%!important;min-width:0!important;margin:0!important;border:0!important;border-radius:12px!important;box-shadow:none!important}
