@@ -66,8 +66,8 @@ export async function generateDailyPractice(env){
    await env.STORE.put(cursorKey,String((cursor+1)%DAILY_SUBJECTS.length));
    return;
   }
-  const prompt='Buat tepat '+count+' soal pilihan ganda orisinal kelas IX SMP/MTs. Mapel: '+subject.name+'. Materi: '+subject.topics.join('; ')+'. Sebarkan topik. Bahasa Indonesia jelas. Soal dan opsi singkat, 4 opsi berbeda, hanya 1 kunci benar. Pembahasan maksimal 8 kata. Jangan membuat soal ambigu atau mengarang fakta. JSON valid saja: {"questions":[{"question":"...","options":["...","...","...","..."],"answer":"A","topic":"nama topik","explanation":"..."}]}.';
-  const result=await model(env,prompt,550,'daily');
+  const prompt='Buat tepat '+count+' soal pilihan ganda orisinal kelas IX SMP/MTs. Mapel: '+subject.name+'. Materi: '+subject.topics.join('; ')+'. Sebarkan topik. Bahasa Indonesia jelas. Soal dan opsi singkat, 4 opsi berbeda, hanya 1 kunci benar. Pembahasan maksimal 5 kata. Jangan membuat soal ambigu atau mengarang fakta. JSON valid saja: {"questions":[{"question":"...","options":["...","...","...","..."],"answer":"A","topic":"nama topik","explanation":"..."}]}.';
+  const result=await model(env,prompt,500,'daily');
   if(!Array.isArray(result.questions)||result.questions.length!==count||!result.questions.every(validQuestion))throw Error('Format batch bank harian tidak valid');
   const known=new Set(stage.questions.map(q=>q.question.toLocaleLowerCase('id').replace(/[^\p{L}\p{N}]+/gu,' ').trim()));
   const accepted=[];
