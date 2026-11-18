@@ -66,9 +66,8 @@ export async function generateDailyPractice(env){
    await env.STORE.put(cursorKey,String((cursor+1)%DAILY_SUBJECTS.length));
    return;
   }
-  const previous=stage.questions.slice(-25).map(q=>q.question);
-  const prompt='Buat tepat '+count+' soal pilihan ganda orisinal untuk siswa kelas IX SMP/MTs Indonesia. Mapel: '+subject.name+'. Materi yang boleh diuji: '+subject.topics.join('; ')+'. Sebarkan soal ke berbagai materi tersebut. Tingkat kesulitan campuran dan sesuai kelas IX. Bahasa Indonesia jelas. Empat opsi harus berbeda dan hanya satu jawaban benar. Pembahasan singkat dan akurat. Hindari soal yang mirip dengan daftar sebelumnya.\nSoal sebelumnya: '+JSON.stringify(previous)+'\nKeluarkan JSON valid saja: {"questions":[{"question":"...","options":["...","...","...","..."],"answer":"A","topic":"nama topik dari daftar materi","explanation":"..."}]}.';
-  const result=await model(env,prompt,1800);
+  const prompt='Buat tepat '+count+' soal pilihan ganda orisinal kelas IX SMP/MTs. Mapel: '+subject.name+'. Materi: '+subject.topics.join('; ')+'. Sebarkan topik. Bahasa Indonesia jelas. Soal dan opsi singkat, 4 opsi berbeda, hanya 1 kunci benar. Pembahasan maksimal 8 kata. Jangan membuat soal ambigu atau mengarang fakta. JSON valid saja: {"questions":[{"question":"...","options":["...","...","...","..."],"answer":"A","topic":"nama topik","explanation":"..."}]}.');
+  const result=await model(env,prompt,550);
   if(!Array.isArray(result.questions)||result.questions.length!==count||!result.questions.every(validQuestion))throw Error('Format batch bank harian tidak valid');
   const known=new Set(stage.questions.map(q=>q.question.toLocaleLowerCase('id').replace(/[^\p{L}\p{N}]+/gu,' ').trim()));
   const accepted=[];
