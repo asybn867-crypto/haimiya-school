@@ -476,6 +476,13 @@ html,body{background:transparent!important;color:#342a25!important}
 #nav .nav-link,#nav .nav-link.active{font-weight:400!important;color:#665548!important}
 #nav .nav-link:hover,#nav .nav-link.active{color:#49372b!important;transform:none!important}
 
-/* Spotify: remove the thick white container around the player */
-.music-card{padding:0!important;background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important;overflow:visible!important}
-.music-card iframe{display:block!important;width:100%!important;max-width:100%!important;min-width:0!important;margin:0!important;border:0!important;border-radius:12px!important;box-shadow:none!important}
+/* Restore Spotify card styling; transparency applies to navigation and lessons instead */
+
+/* Sidebar navigation and school lessons: transparent, readable, regular text */
+#nav .nav-link,#nav .nav-link:link,#nav .nav-link:visited,#nav .nav-link.active,#nav .nav-link:hover,#nav .nav-link:focus{background:transparent!important;border-color:transparent!important;box-shadow:none!important;font-weight:500!important;color:#594b40!important;transform:none!important}
+#nav .nav-link.active{color:#49372b!important}
+#view-schedule .lesson,#view-schedule .lesson.break{background:transparent!important;border-color:rgba(101,69,47,.18)!important;box-shadow:none!important;backdrop-filter:none!important}
+#view-schedule .lesson.active{background:rgba(237,145,72,.13)!important;border-color:rgba(217,154,104,.5)!important;box-shadow:none!important}
+#view-schedule .lesson-name{font-weight:500!important;color:#49372b!important}
+#view-schedule .lesson-time,#view-schedule .lesson-teacher{font-weight:400!important;color:#75675b!important}
+#view-schedule .lesson-tag{font-weight:500!important}
