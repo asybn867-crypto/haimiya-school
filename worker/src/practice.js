@@ -52,6 +52,10 @@ const DAILY_SUBJECTS=[
 ];
 export async function generateDailyPractice(env){
  if(!env.AI||!env.STORE)return;
+ const localHour=Number(new Intl.DateTimeFormat('en-US',{timeZone:TZ,hour:'2-digit',hourCycle:'h23'}).format(new Date()));if(localHour<5)return;
+ const runDay='practice:daily:run-day',today=dayKey(),previous=await env.STORE.get(runDay);
+ if(previous!==today){for(const item of DAILY_SUBJECTS){const h=await hash(item.name);await env.STORE.delete('practice:daily:stage:v1:'+h);await env.STORE.delete('practice:daily:published:v1:'+h);}await env.STORE.put('practice:daily:cursor','0');await env.STORE.put(runDay,today);}
+ const published=[];for(const item of DAILY_SUBJECTS){const h=await hash(item.name);published.push(await env.STORE.get('practice:daily:published:v1:'+h));}if(published.every(Boolean))return;
  const lock='practice:daily:lock';
  if(await env.STORE.get(lock))return;
  await env.STORE.put(lock,'1',{expirationTtl:150});
@@ -67,7 +71,7 @@ export async function generateDailyPractice(env){
    return;
   }
   const prompt='Buat tepat '+count+' soal pilihan ganda orisinal kelas IX SMP/MTs. Mapel: '+subject.name+'. Materi: '+subject.topics.join('; ')+'. Sebarkan topik. Bahasa Indonesia jelas. Soal dan opsi singkat, 4 opsi berbeda, hanya 1 kunci benar. Pembahasan maksimal 5 kata. Jangan membuat soal ambigu atau mengarang fakta. JSON valid saja: {"questions":[{"question":"...","options":["...","...","...","..."],"answer":"A","topic":"nama topik","explanation":"..."}]}.';
-  const result=await model(env,prompt,500,'daily');
+  const result=await model(env,prompt,1800,'daily');
   if(!Array.isArray(result.questions)||result.questions.length!==count||!result.questions.every(validQuestion))throw Error('Format batch bank harian tidak valid');
   const known=new Set(stage.questions.map(q=>q.question.toLocaleLowerCase('id').replace(/[^\p{L}\p{N}]+/gu,' ').trim()));
   const accepted=[];
