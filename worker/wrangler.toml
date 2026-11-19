@@ -21,4 +21,4 @@ tag = "v1"
 new_sqlite_classes = ["AIUsageGuard"]
 
 [triggers]
-crons = ["*/3 * * * *"]
+crons = ["* * * * *"]
