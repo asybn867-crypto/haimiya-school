@@ -1,5 +1,5 @@
-const DAILY_BUDGET=8500;
-const CATEGORY_BUDGETS={daily:7200,interactive:1300};
+const DAILY_BUDGET=60000;
+const CATEGORY_BUDGETS={daily:50000,interactive:10000};
 const MODEL_INPUT_RATE=9091;
 const MODEL_OUTPUT_RATE=27273;
 export async function reserveAI(env,prompt,maxTokens=1000,category='interactive'){
